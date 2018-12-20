@@ -7,6 +7,24 @@
     display: none;
 }
 
+#btnChatbot {
+    position: fixed;
+    z-index: 99999;
+    bottom: 0;
+    right: 4rem;
+    border-radius: .65rem .65rem 0 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,.3);
+    font-size: .9rem;
+    font-weight: bold;
+    background-color: #ffcc00;
+    background-image: url('./images/chatbot.png');
+    background-repeat: no-repeat;
+    background-size: 1.7rem;
+    background-position: 1rem .4rem;
+    padding: .5rem 1.5rem .5rem 3.2rem;
+    border: none;
+}
+
 #chatbot {
     position: absolute;
     right: 2rem;
