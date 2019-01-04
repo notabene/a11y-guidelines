@@ -3,15 +3,45 @@
 * Copyright (C) 2016  Orange SA
 * See the Creative Commons Legal Code Attribution-ShareAlike 3.0 Unported License for more details (LICENSE file).**/
 
-#chatbot-window {
-    display: none;
+button:focus, input[type=submit]:focus, div:focus, a:focus {
+    outline: .2rem solid #f16e00;
 }
 
-#btnChatbot {
-    position: fixed;
-    z-index: 99999;
+#skip-links {
+    position: absolute;
+    top: .5rem;
+    left: 0;
+    z-index: 10000;
+    background: #fff;
+    padding: .5rem;
+    width: 100%;
+    border-bottom: .25rem solid;
+}
+
+.skiplink {
+    margin: .5rem;
+    padding: .5rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-decoration: none;
+    background: #fff;
+}
+
+#chatbot-window {
+    display: none;
+    position: absolute;
+    right: 2rem;
+    bottom: 2rem;
+    border-bottom: .25rem solid #eee;
+    border-top: .25rem solid #666;
+    box-shadow: 2px 2px 5px 0px #cfcfcf;
+}
+
+#chatbot-window.chatbot-hidden {
     bottom: 0;
-    right: 4rem;
+}
+
+.btnChatbot {
     border-radius: .65rem .65rem 0 0;
     box-shadow: 0 2px 6px rgba(0,0,0,.3);
     font-size: .9rem;
@@ -25,18 +55,25 @@
     border: none;
 }
 
+#btnExemple2 {
+    cursor: pointer;
+}
+
+#btnChatbot {
+    position: fixed;
+    z-index: 99999;
+    bottom: 0;
+    right: 4rem;    
+}
+
 #chatbot {
-    position: absolute;
-    right: 2rem;
-    width: 20rem;
-    bottom: 7rem;
-    height: 20rem;
+    position: relative;    
+    width: 20rem;        
     background: #000;
 }
 
-.chatbot-hidden #chatbot {
-    bottom: 2rem;
-    height: 2.5rem;
+#chat-container {
+    height: 20rem;
 }
 
 #chatbot-title {
@@ -55,7 +92,8 @@
     border: .15rem solid #efefef;
 }
 
-.chatbot-hidden #chat-content {
+.chatbot-hidden #chat-content,
+.chatbot-hidden #chat-container {
     display: none;
 }
 
@@ -100,7 +138,7 @@
     color: #f16e00;
 }
 
-#chatbot .from {
+#chatbot span.from {
     font-size: .9rem;
     color: #686868;
     margin: 0 .75rem;
@@ -108,36 +146,45 @@
     clear: both;
 }
 
-#chatbot .from[data-from=moi] {
+#chatbot span.from[data-from=moi] {
     float: right;    
+}
+
+#chatbot .message:first-child {
+    border-top-left-radius: 1rem;
+    margin-top: .5rem;
+}
+
+#chatbot .message:last-child {
+    border-bottom-left-radius: 1rem;
+    margin-bottom: .5rem;
+}
+
+#chatbot .messages[data-from=moi] .message:first-child {
+    border-top-right-radius: 1rem;
+}
+
+#chatbot .messages[data-from=moi] .message:last-child {
+    border-bottom-right-radius: 1rem;
 }
 
 #chatbot .message {
     background: #eee;
-    margin: .5rem;
+    margin: .2rem .5rem .2rem .5rem; 
     padding: .5rem 1.5rem;
-    border-radius: 1rem;    
+    border-radius: .3rem 1rem 1rem .3rem;
     float: left;
     clear: both;    
 }
 
-#chatbot .message[data-from=moi] {
+#chatbot .messages[data-from=moi] .message {
+    border-radius: 1rem .3rem .3rem 1rem;
     float: right;
     clear: both;
     background-color: #f16e00;
     color: #fff;
     font-weight: bold;
 }
-
-.high-contrast #chatbot .message {
-    font-weight: bold;
-}
-
-.high-contrast #chatbot .message[data-from=moi] {
-    background-color: #000;
-    color: #fff;
-}
-
 
 #chatbot-toolbar {
     float: right;
@@ -168,10 +215,6 @@
     background-image: url(./images/ico-contrast.png);
 }
 
-.high-contrast #ico-contrast {
-    background-image: url(./images/ico-contrast-on.png);
-}
-
 .chatbot-hidden #ico-contrast {
     display: none;
 }
@@ -190,6 +233,9 @@
 }
 
 #chatbot .ico:focus, #chatbot .ico:hover {
-    background-color: #f16e00;
-    outline: none;
+    background-color: #f16e00;    
+}
+
+.screenshot {
+    border: .1rem solid #000;
 }

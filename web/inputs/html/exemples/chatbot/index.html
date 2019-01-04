@@ -29,10 +29,69 @@
 
 </head>
 <body>
-
-    <main class="container">
-      <h1>Exemple de mise en place d'un chatbot (à venir...).</h1>
+    <div id="skip-links" class="sr-only">
+      <a class="skiplink" href="#content">Aller au contenu</a>
+      <a id="chatbot-skiplink"class="skiplink" href="#">Aller au chat</a>
+    </div>
+    <main id="content" class="container">
+      <h1>Créer un chatbot accessible.</h1>
       
+      <p>Les Assistants virtuels et les Chatbots sont de plus en plus nombreux sur les sites web. Malheureusement ils sont rarement accessibles à tous les utilisateurs. Paradoxalement ce sont les utilisateurs qui en auraient le plus besoin qui rencontrent souvent des difficultés à les utiliser.</p>
+<p>&nbsp;</p>
+      <h2>1. Les recommandations de la marque</h2>
+
+      <p>Cette article détaille un certain nombre de points techniques surlesquels il faut être vigilant. Si l'objectif est de développer un chatbot pour un site Orange, il convient en premier lieu de consulter les recommandations de la marque à ce sujet disponible sur le site : <a href="https://design.orange.com/guidelines/conversational-ui-0">design.orange.com</a>.</p>
+      
+      <h2>2. Accéder au chatbot</h2>      
+      <p>La première action qui va être effectuée par l'utilisateur avant même d'utiliser le chatbot va être de le faire apparaitre si celui-ci n'est pas visible par défaut lorsque l'utilisateur consulte la page. Pour cela l'utilisateur doit se rendre contre rapidement qu'un chatbot est disponible, de plus il doit pouvoir y accéder simplement par exemple à l'aide d'un bouton dont le libellé devra être suffisamment explicite.</p>
+
+      <h3>Navigation au clavier</h3>        
+      <p>Ajouter un bouton permettant d'accéder au chatbot dans un coin de la page n'est pas suffisant. Il faut s'assurer que celui-ci soit accessible à l'aide du clavier pour les personnes qui ne peuvent utiliser une souris par exemple où celles qui utilisent un clavier physique 
+        pour naviguer sur leur mobile ou leur tablette (plus d'infos sur la <a href="../methodes-outils-clavier.html">navigaton à l'aide du clavier</a>). Pour cela utiliser par exemple un vrai bouton (balise <code>&lt;button&gt;</code>) au niveau du code, comme c'est le cas sur cette page (bouton contact situé en bas à droite de la page).
+      </p>
+      <strong>Exemple :</strong>
+      <p>
+        Les deux boutons ci-dessous semblent identiques si on les utilise avec la souris. Par contre si on essait de les utiliser en navigant à l'aide de la touche TAB,
+        le second bouton (réalisé à l'aide d'une balise <code>&ltspan&gt;</code>) n'est pas focusable. Dans ce cas l'utilisateur ne pourrait tout simplement pas ouvrir le chatbot.
+      </p>        
+      <p>
+          <button id="btnExemple1" class="btnChatbot">Contact</button><br><br>
+          <span id="btnExemple2" class="btnChatbot">Contact</span>
+      </p>
+      
+      <h3>Navigation au lecteur d'écran</h3>
+      <p>
+        Si pour les utilisateurs qui voient l'écran, la présence d'un bouton pour accéder au chatbot en bas à droite de l'écran semble suffisant, les utilisateurs malvoyants qui 
+        naviguent avec un lecteur d'écran risque de passer à côté. En effet pour entendre ce bouton ils devront écouter la page en entier jusqu'à la dernière ligne.        
+      </p>
+      <p>
+        Plusieurs solutions pour éviter ce problème sont disponibles :
+        <ul>
+          <li>Ajouter des liens d'évitement sur la page</li>
+          <li>Utiliser les landmark</li>
+          <li>Utiliser une balise de titre</li>
+        </ul>
+
+      </p>
+
+      <h4>Ajouter des liens d'évitement</h4>
+      
+      <p>Les liens d'évitement permettent d'accéder directement à une zone spécifique de la page. Ils sont inserés en haut de page et donc vocalisés en premier.
+        La présence d'un lien d'évitement permettant d'accéder directement au chatbot permettra d'en indiquer la présence à l'utilisateur.
+        Ces liens d'évitements peuvent être masqués à l'écran (<a href="../masquage/index.html">masquage accessible</a>).
+      </p>
+      <p>
+        La présence des liens d'évitement est également positive pour les personnes qui naviguent au clavier. Par exemple sur la page que vous consultez actuelement des liens d'évitements sont disponibles. 
+        Ils masqués par défaut et deviennent visible à la prise du focus. Pour les faire apparaitre, vous pouvez cliquer dans la barre d'adresse de votre navigateur puis appuyer plusieurs fois sur la touche <code>TAB</code>.
+      </p>
+
+      <img class="screenshot" src="./images/skiplinks.png" alt="capture d'écran des liens d'évitements qui s'affichent sur cette page lors de la navigation au clavier">
+
+      <p>
+      Ajout d'un tabindex="0" sur #chat-content pour rendre le contenu défillable à l'aide du clavier (notamment pour chrome : fonctionne par défaut sur firefox).
+      Gestion du title de la fenetre (utilisation de document.activeElement pour modifier le titre uniquement lorsque le focus n'est pas dans le champ du chat).
+      </p>
+
       <p>&nbsp;</p>            
     </main>
 
@@ -40,20 +99,22 @@
       <div role="alert" id="chatbot">
         <span id="chatbot-title" role="heading" aria-level="1">Djingo <span class="sr-only">Fenêtre de discution</span></span>        
         <span id="chatbot-toolbar">          
-          <button class="ico" id="ico-contrast" title="Mode contraste élevé" aria-label="Mode contraste élevé" role="checkbox"></button>
+          <!--<button class="ico" id="ico-contrast" title="Mode contraste élevé" aria-label="Mode contraste élevé" role="checkbox"></button>-->
           <button class="ico" id="chatbot-hide" title="Réduire la fenêtre de discution" aria-label="Réduire la fenêtre de discution"></button>
           <button class="ico" id="chatbot-show" title="Afficher la fenêtre de discution" aria-label="Afficher la fenêtre de discution"></button>
           <button class="ico" id="chatbot-close" title="Fermer la fenêtre de discution" aria-label="Fermer la fenêtre de discution"></button>
         </span>
-        <div id="chat-content" aria-live="polite"></div>
+        <div id="chat-container">
+          <div id="chat-content" tabindex="0" aria-live="polite"></div>
+        </div>
         <form>
           <input type="text" aria-label="message à envoyer" id="chat-input" autocomplete="off" placeholder="Saisir votre message...">
-          <input type="submit" title="Envoyer ce message" value="" aria-label="envoyer ce message"></button>
+          <input type="submit" title="Envoyer ce message" value="" aria-label="envoyer"></button>
         </form>
       </div>
     </div>
 
-    <button id="btnChatbot">Contact</button>
+    <button class="btnChatbot" id="btnChatbot">Contact</button>
     <div aria-hidden="true" id="sound"></div>
     <script src="../../../boosted/js/boosted.min.js"></script>
     <script type="text/javascript" src="../../../js/highlight.min.js"></script>

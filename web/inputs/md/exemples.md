@@ -13,6 +13,8 @@
     <dd>Créer des éléments non-visibles à l'écran mais accessibles aux outils d'assistances.</dd>
     <dt><a href="exemples/formulaire/index.html">Gestion des formulaires</a><dt>
     <dd>Exemple de formulaire accessible.</dd>
+    <dt><a href="exemples/simple-menu/simple-menu.html">Menu déroulant</a><dt>
+    <dd>Créer un menu déroulant accessible.</dd>
     <dt><a href="exemples/zoom/index.html">Gestion du zoom, agrandissement de la taille du texte</a><dt>
     <dd>Gestion de l'agrandissement de la taille des caractères par l'utilisateur.</dd>
     <dt><a href="exemples/prix/index.html">Affichage et vocalisation des prix</a><dt>
@@ -23,10 +25,10 @@
     <dd>Exemple de boite de dialogue accessible (partie 1).</dd>
     <dt><a href="exemples/role-dialog2/role-dialog.html">Les boites de dialogue 2/2</a><dt>
     <dd>Exemple de boite de dialogue accessible (partie 2).</dd>
-    <dt><a href="exemples/simple-menu/simple-menu.html">Menu déroulant</a><dt>
-    <dd>Créer un menu déroulant accessible.</dd>
     <dt><a href="exemples/speak/index.html">Faire parler le lecteur d'écran via Javascript</a><dt>
     <dd>Exemple de code permettant de faire parler la synthèse vocale.</dd>
+    <dt><a href="exemples/chatbot/index.html">Créer un chatbot accessible</a><dt>
+    <dd>Exemple de chatbot accessible.</dd>
     <dt><a href="exemples/tag/index.html">Créer des «&nbsp;tags&nbsp;» accessibles 1/2</a><dt>
     <dd>Exemple d'étiquettes accessibles (partie 1).</dd>
     <dt><a href="exemples/tag-exemples/index.html">Créer des «&nbsp;tags&nbsp;» accessibles 2/2 (exemples)</a><dt>
