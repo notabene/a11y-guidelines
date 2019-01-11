@@ -239,3 +239,7 @@ button:focus, input[type=submit]:focus, div:focus, a:focus {
 .screenshot {
     border: .1rem solid #000;
 }
+
+.btn-list li {
+    margin-bottom: 1rem;
+}
