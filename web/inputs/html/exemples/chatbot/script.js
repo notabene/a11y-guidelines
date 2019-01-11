@@ -19,7 +19,7 @@ $(document).ready(function() {
         if ($("#chatbot-window").is(":visible")) {
             $("#chat-input").focus();
         } else {
-            $("#btnChatbot").focus();            
+            $("#btnChatbot").focus();
         }
     });
 
