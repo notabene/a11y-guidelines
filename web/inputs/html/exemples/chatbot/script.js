@@ -9,6 +9,7 @@ $(document).ready(function() {
 
     $(".skiplink").on("focus", function () {
         $("#skip-links").removeClass("sr-only");
+        window.scrollTo(0,0);
     });
 
     $(".skiplink").on("blur", function () {
@@ -19,7 +20,9 @@ $(document).ready(function() {
         if ($("#chatbot-window").is(":visible")) {
             $("#chat-input").focus();
         } else {
-            $("#btnChatbot").focus();
+            $("#chatbot-window").show();
+            $("#btnChatbot").addClass("sr-only");
+            $("#chat-input").focus();
         }
     });
 

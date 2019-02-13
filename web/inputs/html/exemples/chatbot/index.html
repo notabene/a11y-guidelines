@@ -36,16 +36,13 @@
     <main id="content" class="container">
       <h1>Créer un chatbot accessible.</h1>
       
-      <p>Les Assistants virtuels et les Chatbots sont de plus en plus nombreux sur les sites web. Malheureusement ils sont rarement accessibles à tous les utilisateurs. Paradoxalement ce sont les utilisateurs qui en auraient le plus besoin qui rencontrent souvent des difficultés à les utiliser.</p>
-      <p>&nbsp;</p> 
       <h2>1. Les recommandations de la marque</h2>
 
-      <p>Cette article détaille un certain nombre de points techniques surlesquels il faut être vigilant. Si l'objectif est de développer un chatbot pour un site Orange, il convient en premier lieu de consulter les recommandations de la marque à ce sujet disponibles sur le site : <a href="https://design.orange.com/guidelines/conversational-ui-0">design.orange.com</a>.</p>
+      <p>Cette article détaille un certain nombre de points techniques surlesquels il faut être vigilant. Si l'objectif est de développer un chatbot pour un site Orange, il convient en premier lieu de consulter les recommandations de la marque à ce sujet disponibles sur le site : <a href="https://design.orange.com/guidelines/conversational-ui-0">design.orange.com</a> <span lagn="en">(Conversational UI guideline)</span>.</p>
       
       <h2>2. Accéder au chatbot</h2>      
       <p>
-        La première action effectuée par l'utilisateur avant même d'utiliser le chatbot est de le faire apparaitre (dans le cas où celui-ci n'est pas visible par défaut). 
-        L'utilisateur doit être en mesure de découvrir la présence du chatbot sur la page, de plus il doit pouvoir y accéder simplement. Par exemple à l'aide d'un bouton dont le libellé devra être suffisamment explicite.
+        Avant d'utiliser un chatbot, bien souvent il est nécessaire de le faire apparaitre en cliquant sur un bouton situé dans un coin de la page. L'utilisateur doit être en mesure de découvrir par lui-même qu'il a la possiblité d'utiliser un chatbot sur la page qu'il consulte : utiliser un bouton dont le libellé sera suffisamment explicite.
       </p>
 
       <p>
@@ -53,25 +50,25 @@
       </p>
 
       <h3>Navigation au clavier</h3>        
-      <p>Ce bouton doit être accessible à l'aide du clavier (plus d'infos sur la <a href="../methodes-outils-clavier.html">navigaton à l'aide du clavier</a>). Pour cela utiliser par exemple un vrai bouton (balise <code>&lt;button&gt;</code>) au niveau du code, comme c'est le cas sur cette page (bouton contact situé en bas à droite de la page).
+      <p>Ce bouton doit être accessible à l'aide du clavier (plus d'infos sur la <a href="../methodes-outils-clavier.html">navigaton à l'aide du clavier</a>). Utiliser par exemple un vrai bouton (balise <code>&lt;button&gt;</code>) au niveau du code, comme c'est le cas sur cette page (bouton contact situé en bas à droite de la page).
       </p>
       <strong>Exemple :</strong>
       <p>
         Les deux boutons ci-dessous semblent identiques si on les utilise avec la souris. Par contre si on essait de les utiliser en navigant à l'aide de la touche TAB,
-        le second bouton (réalisé à l'aide d'une balise <code>&ltspan&gt;</code>) n'est pas focusable. Dans ce cas l'utilisateur ne pourrait tout simplement pas ouvrir le chatbot.
+        le second bouton (réalisé à l'aide d'une balise <code>&ltspan&gt;</code>) n'est pas focusable. Dans ce dernier cas un utilisateur qui navigue à l'aide du clavier ne pourra tout simplement pas ouvrir le chatbot.
       </p>        
       <p>
           <ul class="btn-list">
             <li><button id="btnExemple1" class="btnChatbot">Contact</button> : bouton focusable (balise <code>&lt;button&gt;</code>).</li>
-            <li><span id="btnExemple2" class="btnChatbot">Contact</span> : bouton non focusable (balise <code>&lt;span&gt;</code>).</li>
+            <li><span id="btnExemple2" class="btnChatbot ko">Contact</span> : bouton non focusable (balise <code>&lt;span&gt;</code>).</li>
           </ul>
           <br>
       </p>
       
       <h3>Navigation au lecteur d'écran</h3>
       <p>
-        Si pour les utilisateurs qui voient l'écran, la présence d'un bouton pour accéder au chatbot en bas à droite de la page semble suffisant, les utilisateurs malvoyants qui 
-        naviguent avec un lecteur d'écran cela risque de poser des difficultés. En effet pour entendre ce bouton ils devront écouter la page en entier jusqu'à la dernière ligne (écouter le pied de pages et les nombreux liens qu'il contient...).
+        La présence d'un bouton pour accéder au chatbot en bas à droite suffira à faire comprendre à certains utilisateurs qu'un chatbot est disponible sur la page.
+        Cela dit pour les utilisateurs malvoyants qui naviguent avec un lecteur d'écran cela risque de poser des difficultés. En effet pour entendre ce bouton, placé bien souvant à la fin du code, il faudrait que l'utilisateur écoute la page en entier jusqu'à la dernière ligne. Cela veut dire qu'il devrait aller jusqu'à écouter la totalité du pied de pages et de ces nombreux liens. En pratique on se doute que ce n'est pas ce que font les utilisateurs. Dans cette configuration, un utilisateur malvoyant ne sera donc même pas qu'un bouton pour accéder au chat est présent sur la page.
       </p>
       <p>
         Plusieurs solutions pour éviter ce problème sont disponibles :
@@ -87,7 +84,10 @@
       
       <p>Les liens d'évitement permettent d'accéder directement à une zone spécifique de la page. Ils sont inserés en haut de page et donc vocalisés en premier.
         La présence d'un lien d'évitement "accéder au tchat" permettant d'aller directement au chatbot permettra d'en indiquer la présence à l'utilisateur.
-        Ces liens d'évitements peuvent être masqués à l'écran (<a href="../masquage/index.html">masquage accessible</a>).
+        Ces liens d'évitements peuvent être masqués à l'écran (grâce au <a href="../masquage/index.html">masquage accessible</a>).
+      </p>
+      <p>
+        Attention aux anglicismes. Remarquer ici l'utilisation du mot «tchat» et non «chat». A l'écoute, le second mot est vocalisé comme l'animal (sans l'accent anglais cela peut prêter à confusion).
       </p>
       <p>
         La présence des liens d'évitement est également positive pour les personnes qui naviguent au clavier. Par exemple sur la page que vous consultez actuelement des liens d'évitements sont disponibles. 
@@ -103,29 +103,122 @@
         En plus des <a href="../landmarks/index.html">balises prédéfinies</a> (<code>main</code>, <code>aside</code>, <code>footer</code> et <code>header</code>, ...) il est possible de créer des landmarks "sur mesure" en utilisant le role ARIA <code>region</code>.        
       </p>
               
-      <pre><code>
-        &lt;div role="region" aria-label="fenêtre du tchat"&gt;&lt;/div&gt;
+      <pre><code class="html">
+        &lt;div role="region" aria-label="fenêtre du tchat"&gt;
+          &lt;!-- code du chatbot --&gt;
+        &lt;/div&gt;
       </code></pre>      
 
       <p>
-        Ce code permet aux personnes qui utilisent un lecteur d'écran d'accéder au tchat depuis la liste des régions. La capture d'écran ci-dessous a été obtenue en affichant la liste des région depuis le lecteur d'écran NVDA :<br>
+        Ce code permet de définir une zone "fenêtre de chat" dans la page. Cela permet aux personnes qui utilisent un lecteur d'écran d'accéder au tchat depuis la liste des régions. La capture d'écran ci-dessous a été obtenue en affichant la liste des régions depuis le lecteur d'écran NVDA :<br>
         <img class="screenshot img-fluid" src="./images/region.png" alt="liste des régions dans NVDA">
       </p>
 
       <h4>Utiliser une balise de titre</h4>
       <p>
         D'après des sondages réalisés par <a href="https://webaim.org">webaim.org</a> auprès d'utilisateurs de lecteurs d'écran on s'aperçoit que les landmarks ne sont pas encore connus de tous. Par sécurité on peut ajouter également une balise de titre (balise <code>h1</code>, <code>h2</code>...) avant le tchat. 
-        Pour ne pas que ce titre se voit à l'écran il suffit d'utiliser une classe de <a href="../masquage/index.html">masquage accessible</a> (<code>sr-only</code>).
+        Pour que ce titre ne se pas visible à l'écran il suffit d'utiliser une classe de <a href="../masquage/index.html">masquage accessible</a> (<code>sr-only</code>).
         Cela permettra également aux utilisateurs d'accéder au chat depuis la liste des titres de la page.
       </p>
 
-      <pre><code>
+      <pre><code class="html">
           &lt;div role="region" aria-labelledby="tchat-title"&gt;
-          &lt;h1 id="tchat-title" class="sr-only"&gt;fenêtre du tchat&lt;/h1&gt;
+            &lt;h1 id="tchat-title" class="sr-only"&gt;Fenêtre du tchat&lt;/h1&gt;
+            &lt;!-- code du chatbot --&gt;
+          &lt;/div&gt;
       </code></pre>      
 
       <p>
+        <img class="screenshot img-fluid" src="./images/title.png" alt="capture d'écran, liste des titres dans NVDA">
+      </p>
+
+      <h2>3. Accessibilité du chatbot</h2>      
+
+      <p>Maintenant que tous les utilisateurs peuvent accéder au chatbot, il faut s'assurer que celui-ci soit accessible.</p>
+
+      <h3>Navigation au clavier</h3>
+      <p>Concernant la navigation au clavier il suffit de vérifier en navigant sans l'aide de la souris qu'il est possible de cliquer sur l'ensemble des boutons (touche <code>TAB</code> pour déplacer le focus, touche <code>entrée</code> pour activer un bouton), qu'il est possible de saisir et d'envoyer des messages.</p>
+      <p>Après quelques échanges dans le chat, une barre de défillement apparaît. Il faut également s'assurer que celle-ci soit utilisable à l'aide des flèches du clavier. C'est la cas nativement dans Firefox, par contre pour Chrome il a été nécessaire de rendre cet élément focusable à l'aide d'un attribut <code>tabindex</code>.</p>
+
+      <pre><code class="html">
+        &lt;div id="chat-content" <span class="important">tabindex="0"</span>&gt;
+      </code></pre>
+
+      <p>Enfin ne pas oublier de faire en sorte que le focus soit visible lorsque celui-ci est positionné sur l'élément permettant de faire défiler les messages :</p>
+      <pre><code class="css">
+        div:focus {
+          outline: .2rem solid #f16e00;
+        }
+      </code></pre>
+
+      <img class="screenshot img-fluid" src="./images/chat-scroll.png" alt="capture d'écran de la fenêtre de chat avec le focus positionné sur l'élément permettant de faire défiler les messages">
+      
+      <h3>Navigation au lecteur d'écran</h3>
+
+      <h4>Labelliser les éléments interactifs</h4>      
+      <p>Des label ont été ajoutés sur le champ de saisie et sur le bouton envoyer à l'aide d'un attribut <ocde>aria-label</code>. Ainsi un utilisateur malvoyant utilisant un lecteur d'écran entendra qu'il s'agit du champ de saisie permettant de saisir le message à envoyer.</p>
+        <pre><code class="html">
+            &lt;input type="text" <span class="important">aria-label="message à envoyer"</span> id="chat-input" autocomplete="off" placeholder="Saisir votre message..."&gt;
+            &lt;input type="submit" title="Envoyer ce message" <span class="important">aria-label="envoyer"</span>&gt;
+        </code></pre>
+
+      <p>La même chose a été effectuée sur les boutons permettant de reduire et fermer la fenêtre du chat.</p>
+
+      <h4>Prévenir l'utilisateur de l'arrivée d'un nouveau message</h4>
+      <p>Lorsque les éléments de l'interface sont vocalisés correctement, l'utilisateur est à même d'envoyer un message. Par contre en cas de réponse, bien que celle-ci apparaisse à l'écran, le lecteur d'écran ne la vocalisera pas automatiquement.</p>
+      <p>Pour corriger ce problème, il suffit d'ajouter un attribut <code>aria-live</code> pour indiquer au lecteur d'écran que celui-ci doit vocaliser automatiquement toute modification apportée à la liste des messages.</p><div class="">
+      <pre><code class="html">
+          &lt;div id="chat-content" tabindex="0" <span class="important">aria-live="polite"</span>&gt;
+      </code></pre>
+
+      <h4>Identifier l'émetteur d'un message</h4>
+      <p>Est-ce que vous pouvez identifier qui est l'émetteur du message "Test message 2" dans la capture d'écran ci-dessous ?</p>
+      <img class="screenshot img-fluid" src="./images/chat1.png" alt="capture d'écran d'une conversation via une fenêtre de chat">
+      <p></p>
+
+      <p>
+        En regardant l'image précédente, on s'aperçoit que ce message est aligné à droite, il suffit de remonté en haut de la pile des messages alignés à droite pour trouver l'émetteur : "moi".
+      </p>
+
+      <p>
+        Pour un utilisateur qui ne voit pas l'écran, cela peut devenir compliqué puisque l'émetteur du message est inserée visuelement (à juste titre) que lorsqu'il y a un changement d'émetteur dans la conversation.
+      </p>
+      <p>
+        Pour lever toute ambiguïté, on va indiquer devant chaque message son émetteur pour les utilisateurs qui naviguent à l'aide d'un lecteur d'écran uniquement (utilisation de la classe de masquage accessible <code>sr-only</code>). 
+      </p>
+      
+      <pre><code class="html">
+          &lt;div class="message"&gt;
+            &lt;span <span class="important">class="sr-only"</span>&gt;
+              Djingo dit : 
+            &lt;/span&gt;
+            Test message 1
+          &lt;/div&gt;
+
+          ...
+
+          &lt;div class="message"&gt;
+            &lt;span <span class="important">class="sr-only"</span>&gt;
+              moi dit : 
+            &lt;/span&gt;
+            Test message 1
+          &lt;/div&gt;
+      </code></pre>
+
+      <p><Strong>Remarque : </Strong>le formalisme adopté ("moi dit", "Djingo dit") peut paraitre surprenant, mais cela permet à l'utilisateur qui écoute la page d'avoir l'information importante rapidement et éventuelement de passer à la suite sans écouter la fin de la phrase pour gagner du temps.</p>
+
+      <p>Enfin pour éviter d'avoir une double vocalisation, on masquera au lecteur d'écran l'émetteur affiché en haut d'une pile de messages, à l'aide d'un attribut <code>aria-hidden</code>.</p>
+      <pre><code class="html">
+          &lt;span class="from" aria-hidden="true"&gt;moi&lt;/span&gt;
+      </code></pre>
+
+      <h4>Sons</h4>
+      <h4>Titre de la fenêtre</h4>
+   
+
+      <p>
         <br><br><br>
+      Ajouter un message sr-only : tchat = chat
       Ajout d'un tabindex="0" sur #chat-content pour rendre le contenu défillable à l'aide du clavier (notamment pour chrome : fonctionne par défaut sur firefox).
       Gestion du title de la fenetre (utilisation de document.activeElement pour modifier le titre uniquement lorsque le focus n'est pas dans le champ du chat).
       Ajouter du son
@@ -135,7 +228,7 @@
     </main>
 
     <div role="region" aria-labelledby="tchat-title">
-      <h1 id="tchat-title" class="sr-only">fenêtre du tchat</h1>
+      <h1 id="tchat-title" class="sr-only">Fenêtre du tchat</h1>
       <div id="chatbot-window">
         <div role="alert" id="chatbot">
           <span id="chatbot-title" role="heading" aria-level="1">Djingo <span class="sr-only">Fenêtre de discution</span></span>        
