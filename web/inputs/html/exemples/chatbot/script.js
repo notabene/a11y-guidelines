@@ -69,7 +69,7 @@ function push(from, message, silence) {
             playSound("Send_a_message");
         } else {
             playSound("Receive_a_message");
-            if (document.activeElement !== document.getElementById('chat-input')) {
+            if (!document.hasFocus() || document.activeElement !== document.getElementById('chat-input')) {
                 document.title = "Djingo dit ... " + title;
             }
         }
