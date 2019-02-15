@@ -89,11 +89,12 @@ button:focus, input[type=submit]:focus, div:focus, a:focus {
 
 #chat-content {
     width: 100%;
-    height: 100%;
+    height: 20rem;
     background: #fff;
     padding-top: .5rem;
     overflow: auto;
     border: .15rem solid #efefef;
+    border-bottom: 0;
 }
 
 .chatbot-hidden #chat-content,
@@ -102,8 +103,7 @@ button:focus, input[type=submit]:focus, div:focus, a:focus {
 }
 
 #chatbot form {
-    border: .15rem solid #efefef;
-    border-top-width: 0;
+    border: .15rem solid #efefef;    
     background-color: #fff;
 }
 
