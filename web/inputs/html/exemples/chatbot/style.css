@@ -138,6 +138,10 @@ button:focus, input[type=submit]:focus, div:focus, a:focus {
     background-color: transparent;
 }
 
+#chatbot input[type=submit]:hover {
+    background-image: url(./images/ico-send-hover.png);    
+}
+
 #chatbot input[type=submit]:hover, #chatbot input[type=submit]:focus {
     color: #f16e00;
 }

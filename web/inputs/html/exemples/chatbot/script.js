@@ -42,9 +42,11 @@ $(document).ready(function() {
     });
     $("#chatbot-hide").on("click", function () {
         $("#chatbot-window").toggleClass("chatbot-hidden");
+        $("#chatbot-show").focus();
     });
     $("#chatbot-show").on("click", function () {
         $("#chatbot-window").toggleClass("chatbot-hidden");
+        $("#chatbot-hide").focus();
     });
 
     $("#chat-input").on("focus", function () {

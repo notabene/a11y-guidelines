@@ -256,15 +256,15 @@
       <h1 id="tchat-label" class="sr-only" tabindex="-1">Fenêtre du tchat</h1>
       <div id="chatbot-window">
         <div id="chatbot">
-          <span id="chatbot-title" role="heading" aria-level="1">Djingo <span class="sr-only">Fenêtre de discution</span></span>        
+          <span id="chatbot-title" role="heading" aria-level="1">Djingo <span class="sr-only">Fenêtre de discussion</span></span>        
           <span id="chatbot-toolbar">          
             <!--<button class="ico" id="ico-contrast" title="Mode contraste élevé" aria-label="Mode contraste élevé" role="checkbox"></button>-->
-            <button class="ico" id="chatbot-hide" title="Réduire la fenêtre de discution" aria-label="Réduire la fenêtre de discution"></button>
-            <button class="ico" id="chatbot-show" title="Afficher la fenêtre de discution" aria-label="Afficher la fenêtre de discution"></button>
-            <button class="ico" id="chatbot-close" title="Fermer la fenêtre de discution" aria-label="Fermer la fenêtre de discution"></button>
+            <button class="ico" id="chatbot-hide" title="Réduire la fenêtre de discussion" aria-label="Réduire la fenêtre de discussion"></button>
+            <button class="ico" id="chatbot-show" title="Afficher la fenêtre de discussion" aria-label="Afficher la fenêtre de discussion"></button>
+            <button class="ico" id="chatbot-close" title="Fermer la fenêtre de discussion" aria-label="Fermer la fenêtre de discussion"></button>
           </span>
-          <div id="chat-container">
-            <div id="chat-content" tabindex="0" aria-live="polite"></div>
+          <div id="chat-container" aria-live="polite">
+            <div id="chat-content" tabindex="0"></div>
           </div>
           <form>
             <input type="text" aria-label="message à envoyer" id="chat-input" autocomplete="off" placeholder="Saisir votre message...">
@@ -280,6 +280,6 @@
     <script src="../../../boosted/js/boosted.min.js"></script>
     <script type="text/javascript" src="../../../js/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-
-</body>
+  </body>
+  
 </html>
