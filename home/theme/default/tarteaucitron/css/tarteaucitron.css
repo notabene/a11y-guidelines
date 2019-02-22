@@ -437,6 +437,7 @@ h2#tarteaucitronCookiesNumberBis {
     padding: 10px;
     margin: auto;
     width: 100%;
+    opacity: .90;
 }
 
 #tarteaucitronAlertBig #tarteaucitronDisclaimerAlert,
