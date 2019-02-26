@@ -72,8 +72,6 @@
 #refTests ol {list-style-type: decimal;}
 #refTests ul, #refTests ol {padding-left: 1rem;}
 #refTests ol ul{padding-top: 1rem;}
-#refTests a{text-decoration: underline;}
-
 
 #filter h3{margin:0.2rem 0;}
 #filter ul{padding-left:1rem;}
@@ -101,4 +99,7 @@
 .accordion .card-header a[aria-expanded="true"]::after, .accordion .card-header button[aria-expanded="true"]::after {
     -webkit-transform: rotate(180deg);
     transform: rotate(180deg);
+}
+.accordion .card-block a {
+    text-decoration: underline;
 }
