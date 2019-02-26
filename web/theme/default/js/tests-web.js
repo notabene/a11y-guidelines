@@ -180,7 +180,7 @@ function reqListener() {
 		  let arrType    = [];	
 		  let arrProfil  = [];
 		  let conditions = [];
-		let self       = this;
+		  let self       = this;
 
 		
 		//init array conditions avec valeur Expert Accessibilité
