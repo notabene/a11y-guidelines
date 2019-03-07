@@ -7,6 +7,18 @@ button:focus, input[type=submit]:focus, div:focus, a:focus {
     outline: .2rem solid #f16e00;
 }
 
+button.btn-poll {
+    color: #f16e00;
+    border-radius: 2rem;
+    background-color: #fff;
+    border: .2rem solid #f16e00;
+    margin-left: 1rem;
+}
+
+button:focus {
+    outline: none;
+}
+
 #skip-links {
     position: absolute;
     top: .5rem;
@@ -156,6 +168,7 @@ button:focus, input[type=submit]:focus, div:focus, a:focus {
 
 #chatbot span.from[data-from=moi] {
     float: right;    
+    text-align: right;
 }
 
 #chatbot .message:first-child {
@@ -176,7 +189,7 @@ button:focus, input[type=submit]:focus, div:focus, a:focus {
     border-bottom-right-radius: 1rem;
 }
 
-#chatbot .message {
+#chatbot .message, #chatbot .raw-message {
     background: #eee;
     margin: .2rem .5rem .2rem .5rem; 
     padding: .5rem 1.5rem;
@@ -188,10 +201,19 @@ button:focus, input[type=submit]:focus, div:focus, a:focus {
 #chatbot .messages[data-from=moi] .message {
     border-radius: 1rem .3rem .3rem 1rem;
     float: right;
+    text-align: right;
     clear: both;
     background-color: #f16e00;
     color: #fff;
     font-weight: bold;
+}
+
+#chatbot .raw-message {
+    background-color: transparent;
+}
+
+#chatbot .messages[data-from=moi] .raw-message {
+    float: right;
 }
 
 #chatbot-toolbar {

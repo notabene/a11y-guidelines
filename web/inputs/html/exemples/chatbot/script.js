@@ -58,10 +58,59 @@ $(document).ready(function() {
     $("#btnExemple1, #btnExemple2").on("click", function () {
         alert("Ouverture du chatbot !");
     });
+
+    $("#btnChoice").on("click", function () {
+        $("#chatbot-window").show();
+        $("#btnChatbot").addClass("sr-only");
+        $("#chatbot-window").removeClass("chatbot-hidden");
+        window.setTimeout(function () {
+            push("moi", "Et si on parlait accessibilité ?");        
+        },0);
+        
+        window.setTimeout(function () {
+            $("#chat-container").attr("aria-live", "off");
+            $("#poll1, #poll-web, #poll-mobile").attr("id","");
+            push("Djingo", "Super ! Vous souhaitez parler d'accessibilité web ou mobile ?", true, "poll1"); 
+            rawPush('moi', '<button id="poll-web" class="btn btn-primary btn-poll">Web</button><button id="poll-mobile" class="btn btn-primary btn-poll">Mobile</button>');            
+            window.setTimeout(function() {
+                $("#chat-container").attr("aria-live", "polite");
+            }, 0);
+            $("#poll1").focus();
+        }, 2000);       
+    });
+
+    $('body').on('click', '#poll-web', function () {                
+        window.setTimeout(function () {
+            push("moi", "Je veux parler de l'accessibilité du Web.");
+        }, 500);
+        $("#chat-input").val("").focus();
+        $(".from.invisible").remove();
+        $(".messages").last().remove();        
+    });
+
+    $('body').on('click', '#poll-mobile', function () {
+        $("#chat-input").val("").focus();
+        $(".from.invisible").remove();
+        $(".messages").last().remove();
+        window.setTimeout(function () {
+            push("moi", "Je veux parler de l'accessibilité sur mobile.");
+        },500);
+    });    
+
 });
 
-function push(from, message, silence) {
+function rawPush(from, message) {
     var lastFrom = $("#chat-content .messages").last().attr("data-from");
+    if (lastFrom !== from) {
+        $("#chat-content").append('<span data-from="' + from + '" class="from invisible" aria-hidden="true">' + from + '</span><div class="messages" data-from="' + from + '"></div>');
+    }
+    $("#chat-content .messages").last().append('<div class="raw-message"><span class="sr-only">' + from + ' dit : </span>' + message + '</div>');    
+    $("#chat-content").animate({scrollTop: document.getElementById("chat-content").scrollHeight }, 100);
+}
+
+function push(from, message, silence, id) {
+    var lastFrom = $("#chat-content .messages").last().attr("data-from");
+    var id = id?' id="'+id+'" ':'';
     if (lastFrom !== from) {
         $("#chat-content").append('<span data-from="' + from + '" class="from" aria-hidden="true">' + from + '</span><div class="messages" data-from="' + from + '"></div>');
     }
@@ -77,7 +126,7 @@ function push(from, message, silence) {
         }
     }
 
-    $("#chat-content .messages").last().append('<div class="message"><span class="sr-only">' + from + ' dit : </span>' + message + '</div>');    
+    $("#chat-content .messages").last().append('<div class="message" ' + id + ' tabindex="-1"><span class="sr-only">' + from + ' dit : </span>' + message + '</div>');    
     $("#chat-content").animate({scrollTop: document.getElementById("chat-content").scrollHeight }, 100);
 }
 
