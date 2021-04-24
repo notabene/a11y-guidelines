@@ -21,7 +21,7 @@ Mettre en place des gestionnaires d’événements qui ne s’appuient pas uniqu
 
 - Utiliser au maximum les composants <abbr>HTML</abbr> interactifs de base (champs, liens, boutons), ceux-ci étant nativement accessibles au clavier. À défaut, veiller à ce que les composants personnalisés soient opérables au clavier de manière classique.
 
-Voir [la façon de naviguer au clavier](../../outils/navigation-clavier) dans un navigateur web.
+Voir [la façon de naviguer au clavier](/fr/web/outils/methodes-et-outils-de-test/navigation-clavier/) dans un navigateur web.
 
 **Objectif utilisateur&nbsp;:**
  Permettre aux utilisateurs qui ne peuvent pas utiliser la souris (non ou malvoyants, déficients moteurs, cognitives, web mobile, en mobilité…) d’accéder aux fonctionnalités principales de l’application au clavier.
@@ -87,7 +87,7 @@ Une page contenant un lecteur vidéo dont le focus peut entrer à l’intérieur
 
 Ne pas masquer le focus et si nécessaire accentuer sa visibilité sur tous les éléments focusables, par exemple en modifiant la propriété <abbr>CSS</abbr> `outline`.
 
-Veiller à fournir un niveau de contraste suffisant de 3:1 pour que celui-ci soit visible par tous (cf. [mesurer le niveau de contraste des couleurs](methodes-outils-contrastes.html)).
+Veiller à fournir un niveau de contraste suffisant de 3:1 pour que celui-ci soit visible par tous (cf. [mesurer le niveau de contraste des couleurs](/fr/web/outils/methodes-et-outils-de-test/mesurer-contraste-couleurs)).
 
 Lorsqu’un effet est visible sur un élément au survol de la souris (`:hover` en <abbr>CSS</abbr> par exemple), cet effet doit être également affiché à la prise du focus (`:focus`).
 

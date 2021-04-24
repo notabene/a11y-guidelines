@@ -19,6 +19,17 @@ module.exports = {
       limit: 6
     }
   },
+  getDocSearchConfig: function (locale) {
+    return {
+      apiKey: 'a872e031c7e0e72e65e314db546ee3bc',
+      indexName: 'a11y-guidelines-orange',
+      inputSelector: '#search-input',
+      algoliaOptions: {
+        'facetFilters': [`language:${locale}`]
+      },
+      debug: false // Set debug to true if you want to inspect the dropdown
+    }
+  },
   tracking: {
     siteName: 'accessibility-guidelines',
     phase: 'prod', // dev, qa, prod
@@ -31,6 +42,7 @@ module.exports = {
       "showAlertSmall": false, /* Show the small banner on bottom right */
       "cookieslist": true, /* Show the cookie list */
       "adblocker": false, /* Show a Warning if an adblocker is detected */
+      "showIcon": false,
       "AcceptAllCta" : true, /* Show the accept all button when highPrivacy on */
       "highPrivacy": true, /* Disable auto consent */
       "handleBrowserDNTRequest": false, /* If Do Not Track == 1, disallow all */

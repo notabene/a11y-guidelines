@@ -7,45 +7,45 @@ displayToc: true
 
 Ce guide a pour objectif de présenter les différentes notions d’accessibilité à la main des développeurs en associant&nbsp;:
 
-- Des explications détaillées concernant les attributs et méthodes d'accessibilité.
+- des explications détaillées concernant les attributs et méthodes d'accessibilité,
 
-- Des exemples de code en **Swift 5.1** et en **Objective C** *(Xcode 11, iOS 13)*.
+- des exemples de code en **Swift 5.3** et en **Objective C** sous {Xcode 13 ; iOS 14},
 
-- Des liens vers la [`documentation officielle Apple`](https://developer.apple.com/documentation/uikit/accessibility).
+- des liens vers la [`documentation officielle Apple`](https://developer.apple.com/documentation/uikit/accessibility).
 
 <br><br>
 
 ## Nature des éléments
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#TraitElt-Description" 
            role="tab" 
            aria-selected="true">Description</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#TraitElt-Details" 
            role="tab" 
            aria-selected="false">Fonctionnement</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#TraitElt-Example" 
            role="tab" 
            aria-selected="false">Exemple</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#TraitElt-BasicOperations" 
            role="tab" 
            aria-selected="false">Operations</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#TraitElt-Links" 
@@ -159,28 +159,28 @@ func changeTraits() {
 
 ## Alternatives textuelles
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#textAlt-Description" 
            role="tab" 
            aria-selected="true">Description</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link"
            data-toggle="tab" 
            href="#textAlt-Details" 
            role="tab" 
            aria-selected="true">Fonctionnement</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#textAlt-Example" 
            role="tab" 
            aria-selected="false">Exemple</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#textAlt-Links" 
@@ -271,28 +271,28 @@ class ChangeTextView: UIViewController {
 
 ## Date, heure et nombres
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#format-Description" 
            role="tab" 
            aria-selected="true">Description</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#format-DateTime" 
            role="tab" 
            aria-selected="false">Date & Heure</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#format-Numbers" 
            role="tab" 
            aria-selected="false">Nombre</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#format-PhoneNumbers" 
@@ -486,21 +486,21 @@ L'idée est de séparer chaque paire de chiffres par une virgule qui va fournir 
 
 ## Déclencher une vocalisation
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#triggerVocal-Details" 
            role="tab" 
            aria-selected="true">Fonctionnement</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#triggerVocal-Example" 
            role="tab" 
            aria-selected="false">Exemple</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#triggerVocal-Links" 
@@ -541,93 +541,30 @@ UIAccessibility.post(notification: .announcement,
 </div>
 <br><br>
 
-## Modifier la langue de vocalisation
-<ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
-        <a class="nav-link active"
-           data-toggle="tab" 
-           href="#changeLang-Details" 
-           role="tab" 
-           aria-selected="true">Fonctionnement</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" 
-           data-toggle="tab" 
-           href="#changeLang-Example" 
-           role="tab" 
-           aria-selected="false">Exemple</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" 
-           data-toggle="tab" 
-           href="#changeLang-Links" 
-           role="tab" 
-           aria-selected="false">Lien</a>
-    </li>
-</ul><div class="tab-content">
-<div class="tab-pane show active"
-     id="changeLang-Details"
-     role="tabpanel">
-
-Afin de modifier la langue de prononciation de <span lang="en">VoiceOver</span> pour un mot ou un texte, il existe l’attribut **accessibilityLanguage**.
-
-Disponible via le protocole `UIAccessibility`, cet attribut permet de redéfinir la langue de prononciation d’un texte.
-
-</div>
-<div class="tab-pane" id="changeLang-Example" role="tabpanel">
-
-Si on utilise l'attribut `accessibilityLanguage` sur un `UILabel`, alors celui-ci sera vocalisé par <span lang="en">VoiceOver</span> dans la nouvelle langue donnée en valeur de l’attribut.<br>
-
-<pre><code class="objectivec">
-- (IBAction)tapHere:(UIButton *)sender {
-    
-    myLabel.accessibilityLanguage = @"en";
-    myLabel.accessibilityLabel = @"This is a new label. Thank you.";
-    UIAccessibilityPostNotification(UIAccessibilityLayoutChangedNotification, myLabel);
-}
-</code></pre>
-
-<pre><code class="swift">
-@IBAction func tapHere(_ sender: UIButton) {
-        
-    myLabel.accessibilityLanguage = "en"
-    myLabel.accessibilityLabel = "This is a new label. Thank you."
-    UIAccessibility.post(notification: UIAccessibility.Notification.layoutChanged,
-                         argument: myLabel)
-}
-</code></pre>
-
-</div>
-<div class="tab-pane" id="changeLang-Links" role="tabpanel">
-
-- [`accessibilityLanguage`](https://developer.apple.com/documentation/objectivec/nsobject/1615192-accessibilitylanguage)
-</div>
-</div><br><br>
-
 ## Informer d’une modification sur la page
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#changeNotif-Description" 
            role="tab" 
            aria-selected="true">Description</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#changeNotif-Details" 
            role="tab" 
            aria-selected="false">Fonctionnement</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#changeNotif-Example" 
            role="tab" 
            aria-selected="false">Exemple</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#changeNotif-Links" 
@@ -703,33 +640,96 @@ Le son utilisé pour notifier la modification est similaire à l'arrivée d'une 
 
 - [`UIAccessibilityPageScrolledNotification`](https://developer.apple.com/documentation/uikit/uiaccessibilitypagescrollednotification)
 </div>
-</div><br><br>
-<a name="MaskElements"></a>
+</div>
+<br><br>
 
+## Modifier la langue de vocalisation
+<ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item" role="presentation">
+        <a class="nav-link active"
+           data-toggle="tab" 
+           href="#changeLang-Details" 
+           role="tab" 
+           aria-selected="true">Fonctionnement</a>
+    </li>
+    <li class="nav-item" role="presentation">
+        <a class="nav-link" 
+           data-toggle="tab" 
+           href="#changeLang-Example" 
+           role="tab" 
+           aria-selected="false">Exemple</a>
+    </li>
+    <li class="nav-item" role="presentation">
+        <a class="nav-link" 
+           data-toggle="tab" 
+           href="#changeLang-Links" 
+           role="tab" 
+           aria-selected="false">Lien</a>
+    </li>
+</ul><div class="tab-content">
+<div class="tab-pane show active"
+     id="changeLang-Details"
+     role="tabpanel">
+
+Afin de modifier la langue de prononciation de <span lang="en">VoiceOver</span> pour un mot ou un texte, il existe l’attribut **accessibilityLanguage**.
+
+Disponible via le protocole `UIAccessibility`, cet attribut permet de redéfinir la langue de prononciation d’un texte.
+
+</div>
+<div class="tab-pane" id="changeLang-Example" role="tabpanel">
+
+Si on utilise l'attribut `accessibilityLanguage` sur un `UILabel`, alors celui-ci sera vocalisé par <span lang="en">VoiceOver</span> dans la nouvelle langue donnée en valeur de l’attribut.<br>
+
+<pre><code class="objectivec">
+- (IBAction)tapHere:(UIButton *)sender {
+    
+    myLabel.accessibilityLanguage = @"en";
+    myLabel.accessibilityLabel = @"This is a new label. Thank you.";
+}
+</code></pre>
+
+<pre><code class="swift">
+@IBAction func tapHere(_ sender: UIButton) {
+        
+    myLabel.accessibilityLanguage = "en"
+    myLabel.accessibilityLabel = "This is a new label. Thank you."
+}
+</code></pre>
+
+Si l'on souhaite ajouter un mot dans une langue spécifique au sein d'une phrase à prononcer de façon appropriée avec VoiceOver, on peut s'appuyer sur les **Attributed Accessibility Properties** en utilisant un `NSAttributedString` [depuis iOS&nbsp;11](https://a11y-guidelines.orange.com/fr/mobile/ios/wwdc/2017/215/#attributed-accessibility-properties-2607).
+</div>
+<div class="tab-pane" id="changeLang-Links" role="tabpanel">
+
+- [`accessibilityLanguage`](https://developer.apple.com/documentation/objectivec/nsobject/1615192-accessibilitylanguage)
+</div>
+</div>
+<br><br>
+
+<a name="MaskElements"></a>
 ## Masquer des éléments  
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#hideElts-Description" 
            role="tab" 
            aria-selected="true">Description</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#hideElts-Details" 
            role="tab" 
            aria-selected="false">Fonctionnement</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#hideElts-Example" 
            role="tab" 
            aria-selected="false">Exemple</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#hideElts-Links" 
@@ -859,21 +859,21 @@ override func viewDidAppear(_ animated: Bool) {
 
 ## Grouper des éléments
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#groupElts-Description" 
            role="tab" 
            aria-selected="true">Description</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#groupElts-Example1" 
            role="tab" 
            aria-selected="false">Exemple 1</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#groupElts-Example2"
@@ -881,7 +881,7 @@ override func viewDidAppear(_ animated: Bool) {
            role="tab" 
            aria-selected="false">Exemple 2</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#groupElts-Links" 
@@ -1150,21 +1150,21 @@ Cela permet notamment de faire des vocalisations uniques ou de définir un ordre
 
 ## Ordre de lecture
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#readingOrder-Details" 
            role="tab" 
            aria-selected="true">Fonctionnement</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#readingOrder-Example" 
            role="tab" 
            aria-selected="false">Exemple</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#readingOrder-Links" 
@@ -1240,30 +1240,195 @@ On crée deux vues au sein desquelles on incorpore les chiffres qu'on souhaite v
 </div>
 <br><br>
 
+## Fournisseur de contenu personnalisé
+<ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item" role="presentation">
+        <a class="nav-link active"
+           data-toggle="tab" 
+           href="#CuCoPro-Description" 
+           role="tab" 
+           aria-selected="true">Description</a>
+    </li>
+    <li class="nav-item" role="presentation">
+        <a class="nav-link" 
+           data-toggle="tab" 
+           href="#CuCoPro-Details" 
+           role="tab" 
+           aria-selected="false">Fonctionnement</a>
+    </li>
+    <li class="nav-item" role="presentation">
+        <a class="nav-link" 
+           data-toggle="tab" 
+           href="#CuCoPro-Example" 
+           role="tab" 
+           aria-selected="false">Exemple</a>
+    </li>
+    <li class="nav-item" role="presentation">
+        <a class="nav-link" 
+           data-toggle="tab" 
+           href="#CuCoPro-Links" 
+           role="tab" 
+           aria-selected="false">Liens</a>
+    </li>
+</ul><div class="tab-content">
+<div class="tab-pane show active"
+     id="CuCoPro-Description"
+     role="tabpanel">
+     
+Cette **nouveauté iOS&nbsp;14** passée incognito lors de la WWDC 2020 est pourtant véritablement essentielle pour améliorer de façon significative le confort d'utilisation de <span lang="en">VoiceOver</span>.
+
+L'objectif principal du **fournisseur de contenu personnalisé** réside dans une navigation plus rapide au sein d'une interface riche en détails auxquels l'utilisateur peut accéder sans être obligé de subir la vocalisation d'éléments parasites avant d'obtenir ce qui l'intéresse.
+
+L'association d'une **vocalisation souhaitée** de l'information (visuelle ou non) avec une **navigation plus fluide et plus rapide** caractérise donc parfaitement la finalité de cette fonctionnalité.
+
+Un exemple probant est celui de l'application `Photos` où cette fonctionnalité permet l'accès à certaines métadonnées (date, heure...) en ayant toujours la photo sélectionnée&nbsp;: ces informations sont accessibles via l'item `Plus`&nbsp;`de`&nbsp;`contenus` présent dans le [rotor](#rotor-personnalise).
+![](../../images/iOSdev/CustomContentProvider_1.png)
+On peut aussi envisager l'implémentation de cette fonctionnalité dans des listes de cellules comprenant de nombreux détails dont la vocalisation pourrait être réalisée uniquement par ce biais selon l'**intérêt manifesté par l'utilisateur**.
+</div>
+<div class="tab-pane" id="CuCoPro-Details" role="tabpanel">
+
+Pour utiliser cette fonctionnalité, il est impératif de&nbsp;:
+
+- se conformer au protocole **AXCustomContentProvider**,
+
+- fournir un tableau **accessibilityCustomContent** rempli d'éléments **AXCustomContent**,
+
+- définir chaque élément **AXCustomContent** avec sa caractéristique (`value`) ainsi que la famille à laquelle elle appartient (`label`).
+
+
+
+L'accès à ces informations se fait en **utilisant le rotor** qui contiendra alors un item **`Plus`&nbsp;`de`&nbsp;`contenus`** qui permettra de vocaliser chaque `AXCustomContent` par un **balayage vertical avec un doigt** comme pour les [valeurs continûment ajustables](#valeurs-continument-ajustables) ou les [actions personnalisées](#actions-personnalisees).
+</div>
+<div class="tab-pane" id="CuCoPro-Example" role="tabpanel">
+
+L'exemple de code ci-dessous permet d'obtenir tout un tas d'informations présentes sur une image sous forme de données non visuelles mais vocalisables.
+
+⚠️ Il faut absolument penser à **importer le framework Accessibility** auquel appartient le protocole `AXCustomContentProvider`. ⚠️
+
+Après avoir défini la classe pour la vue contenant l'image&nbsp;:
+
+<pre><code class="objectivec">
+//MyCustomView.h
+#import &lt;UIKit/UIKit.h&gt;
+#import &lt;Accessibility/Accessibility.h&gt;  //Oubli rédhibitoire
+
+@interface MyCustomView : UIImageView <AXCustomContentProvider>
+@end
+
+//MyCustomView.m
+@implementation MyCustomView
+
+@synthesize accessibilityCustomContent = _accessibilityCustomContent;
+
+- (void)setAccessibilityCustomContent:(NSArray<AXCustomContent *> *)accessibilityCustomContent {
+
+    if (accessibilityCustomContent != nil) {
+        _accessibilityCustomContent = accessibilityCustomContent;
+    }
+}
+@end        
+</code></pre>
+
+<pre><code class="swift">
+import Accessibility  //Oubli rédhibitoire
+
+class MyCustomView: UIImageView, AXCustomContentProvider {
+    
+    var _accessibilityCustomContent: [AXCustomContent]? = nil
+    var accessibilityCustomContent: [AXCustomContent]! {
+           get { return _accessibilityCustomContent }
+           set(newValue) { _accessibilityCustomContent = newValue }
+       }
+}
+</code></pre>
+
+... on crée chaque élément à vocaliser lors du balayage vertical avec un doigt&nbsp;:
+
+<pre><code class="objectivec">
+@interface ViewController ()
+@property (weak, nonatomic) IBOutlet MyCustomView * myView;
+@end
+
+
+@implementation ViewController
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    _myView.accessibilityLabel = @"logo Orange";
+    _myView.accessibilityHint = @"utiliser l'élément du rotor intitulé plus de contenus pour obtenir des informations complémentaires";
+    
+    AXCustomContent * lastModified = [AXCustomContent customContentWithLabel:@"date de création"
+                                                                       value:@"1988"];
+    AXCustomContent * items = [AXCustomContent customContentWithLabel:@"siège social"
+                                                                value:@"paris"];
+    AXCustomContent * type = [AXCustomContent customContentWithLabel:@"type de société"
+                                                               value:@"télécommunications"];
+    
+    _myView.accessibilityCustomContent = @[lastModified, items, type];
+}
+@end
+</code></pre>
+
+<pre><code class="swift">
+class ViewController: UIViewController {
+
+    @IBOutlet weak var myView: MyCustomView!
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        myView.accessibilityLabel = "logo Orange"
+        myView.accessibilityHint = "utiliser l'élément du rotor intitulé plus de contenus pour obtenir des informations complémentaires"
+        
+        let lastModified = AXCustomContent(label: "date de création", 
+                                           value: "1988")
+        let items = AXCustomContent(label: "siège social", 
+                                    value: "paris")
+        let type = AXCustomContent(label: "type de société", 
+                                   value: "télécommunications")
+
+        myView.accessibilityCustomContent = [lastModified, items, type]
+    }
+}
+</code></pre>
+
+![](../../images/iOSdev/CustomContentProvider_2.png)
+![](../../images/iOSdev/CustomContentProvider_3.png)
+</div>
+<div class="tab-pane" id="CuCoPro-Links" role="tabpanel">
+
+- [Customized Accessibility Content](https://developer.apple.com/documentation/accessibility/customized_accessibility_content/)
+
+- L'[article de Rob Whitaker](https://mobilea11y.com/blog/custom-accessibility-content/) apporte une belle description pédagogique de cette nouvelle fonctionnalité qu'il est un des seuls aujourd'hui à exposer à l'issue de la WWDC 2020.
+</div>
+</div>
+<br><br>
+
 ## Focus d'un élément
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#focusElt-Description" 
            role="tab" 
            aria-selected="true">Description</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#focusElt-Details" 
            role="tab" 
            aria-selected="false">Fonctionnement</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#focusElt-Example" 
            role="tab" 
            aria-selected="false">Exemple</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#focusElt-Links" 
@@ -1359,14 +1524,14 @@ extension UIView {
 
 ## Modifier la zone de focus de <span lang="en">VoiceOver</span>
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#focusArea-Description" 
            role="tab" 
            aria-selected="true">Description</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#focusArea-Details"
@@ -1374,14 +1539,14 @@ extension UIView {
            role="tab" 
            aria-selected="false">Fonctionnement</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#focusArea-Example" 
            role="tab" 
            aria-selected="false">Exemple</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#focusArea-Links" 
@@ -1522,21 +1687,21 @@ float heightVal;
 
 ## Vue modale
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#modalView-Description" 
            role="tab" 
            aria-selected="true">Description</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link"
            data-toggle="tab" 
            href="#modalView-Details" 
            role="tab" 
            aria-selected="false">Fonctionnement</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link"
            data-toggle="tab" 
            href="#modalView-Example"
@@ -1544,7 +1709,7 @@ float heightVal;
            role="tab" 
            aria-selected="false">Exemples</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#modalView-Links" 
@@ -1580,6 +1745,9 @@ Pour application, supposons que nous avons une vue générique contenant des él
 
 <br><br>**Exemple 1**&nbsp;: passer `Parent A` en vue modale.
 <br>Sachant que `Parent A` et `Parent B` sont au même niveau de la hiérarchie des vues, le simple fait d'activer `accessibilityViewIsModal` sur `Parent A` permet d'obtenir le résulat souhaité.
+
+![](../../images/iOSdev/ModalView_2.png)
+
 <br><br>**Exemple 2**&nbsp;: passer `A2` en vue modale.
 <br>Les vues `A1` et `A3` ne sont pas prises en compte par <span lang="en">VoiceOver</span> car elles sont au même niveau de la hiérarchie des vues que `A2` **MAIS** `Parent B` (ou éventuellement ses sous-vues) sera vocalisé... ce qui n'est pas souhaité.
 
@@ -1662,21 +1830,21 @@ Pour application, supposons que nous avons une vue générique contenant des él
 
 ## Taille des textes
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#textSize-Description" 
            role="tab" 
            aria-selected="true">Description</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#textSize-Details" 
            role="tab" 
            aria-selected="false">Fonctionnement</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#textSize-Links" 
@@ -1693,14 +1861,14 @@ Depuis iOS7, il est possible de modifier dynamiquement la taille des textes d'un
 <div class="tab-pane" id="textSize-Details" role="tabpanel">
 
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#TextSize-iOS13"
            role="tab" 
            aria-selected="true">iOS 13</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#TextSize-iOS12"
@@ -1809,14 +1977,14 @@ Il est aussi possible d'utiliser la méthode **[traitCollectionDidChange](../wwd
 
 ## Trait d'union de troncature
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#truncHyphen-Description" 
            role="tab" 
            aria-selected="true">Description</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#truncHyphen-Example" 
@@ -1851,7 +2019,6 @@ Malheureusement, cela n'est pas pris en compte nativement par le système et seu
     NSString * myString = @"anticonstitutionnellement";
     NSMutableParagraphStyle * paraph = [[NSMutableParagraphStyle alloc] init];
     
-    paraph.alignment = NSTextAlignmentJustified;
     paraph.hyphenationFactor = 1.0;
     
     UIFont * myFont = [UIFont fontWithName:@"HoeflerText-Black" size:18.0];
@@ -1881,7 +2048,6 @@ class TruncationHyphen: UIViewController {
         let myString = "anticonstitutionnellement"
         
         let paraph = NSMutableParagraphStyle()
-        paraph.alignment = .justified
         paraph.hyphenationFactor = 1.0
         
         let myTextFont = UIFontMetrics(forTextStyle: .title1).scaledFont(for:UIFont(name:"HoeflerText-Black", size:18)!)
@@ -1904,21 +2070,21 @@ class TruncationHyphen: UIViewController {
 
 ## Taille des éléments graphiques
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#graphEltSize-Description" 
            role="tab" 
            aria-selected="true">Description</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#graphEltSize-Example" 
            role="tab" 
            aria-selected="false">Exemple</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link"
            data-toggle="tab" 
            href="#graphEltSize-Links" 
@@ -1930,7 +2096,7 @@ class TruncationHyphen: UIViewController {
      id="graphEltSize-Description"
      role="tabpanel">
     
-Tout comme la taille des textes est adaptable selon les réglages d'accessibilité (voir <a href="#taille-des-textes">la rubrique précédente</a>), la taille des images ainsi que celle des éléments d'une barre de tabulation ou d'outils l'est aussi mais **uniquement depuis iOS11 avec Xcode 9**.
+Tout comme la taille des textes est adaptable selon les réglages d'accessibilité (voir <a href="#taille-des-textes">la&nbsp;rubrique&nbsp;précédente</a>), la taille des images ainsi que celle des éléments d'une barre de tabulation ou d'outils l'est aussi mais **uniquement depuis iOS11 avec Xcode 9**.
 </div>
 <div class="tab-pane" id="graphEltSize-Example" role="tabpanel" >
 
@@ -1952,7 +2118,7 @@ En suivant les différentes étapes ci-dessous, vous obtiendrez l'effet défini 
 
 **ATTENTION : s'assurer que les contraintes mises en place initialement permettent toujours un affichage cohérent et désiré après grossissement.**
 <br><br>De façon à pouvoir tester à la fois le grossissement des images et celui d'un onglet sélectionné, on crée une application contenant une barre de tabulations contenant 2 onglets dont seul le second nous intéresse et affiche l'image du logo Orange.
-<br>Après modification du grossissement de texte dans les réglages (voir <a href="#taille-des-textes">la rubrique précédente</a>), on revient dans l'application pour constater&nbsp;:
+<br>Après modification du grossissement de texte dans les réglages (voir <a href="#taille-des-textes">la&nbsp;rubrique&nbsp;précédente</a>), on revient dans l'application pour constater&nbsp;:
 
 - une taille de l'image Orange nettement plus conséquente,
 
@@ -1971,28 +2137,28 @@ En suivant les différentes étapes ci-dessous, vous obtiendrez l'effet défini 
 
 ## Large Content Viewer
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#largeContentViewer-Description" 
            role="tab" 
            aria-selected="true">Description</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#largeContentViewer-Details" 
            role="tab" 
            aria-selected="false">Fonctionnement</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#largeContentViewer-Example" 
            role="tab" 
            aria-selected="false">Exemple</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link"
            data-toggle="tab" 
            href="#largeContentViewer-Links" 
@@ -2004,7 +2170,7 @@ En suivant les différentes étapes ci-dessous, vous obtiendrez l'effet défini 
      id="largeContentViewer-Description"
      role="tabpanel">
 
-Le `Dynamic`&nbsp;`Type` permet le grossissement de tous les éléments graphiques avec une particularité pour les éléments {`navigation`/`tab`/`status bars` + `toolbars`} pour lesquels un appui long est nécessaire pour afficher un `HUD` en plein écran appelé **Large Content Viewer** *(voir <a href="#taille-des-elements-graphiques">Taille des éléments graphiques</a>)*.
+Le `Dynamic`&nbsp;`Type` permet le grossissement de tous les éléments graphiques avec une particularité pour les éléments {`navigation`/`tab`/`status bars` + `toolbars`} pour lesquels un appui long est nécessaire pour afficher un `HUD` en plein écran appelé **Large Content Viewer** (voir <a href="#taille-des-elements-graphiques">Taille&nbsp;des&nbsp;éléments graphiques</a>).
 </div>
 <div class="tab-pane" id="largeContentViewer-Details" role="tabpanel">
     
@@ -2134,21 +2300,21 @@ Lorsque la **gestuelle 'appui long' est déjà implémentée sur l'élément imp
 
 ## Valeurs continûment ajustables
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#adjustable-Description" 
            role="tab" 
            aria-selected="true">Description</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#adjustable-Example" 
            role="tab" 
            aria-selected="false">Exemple</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link"
            data-toggle="tab" 
            href="#adjustable-Links" 
@@ -2354,21 +2520,21 @@ class ContinuousAdjustableValues: UIViewController, AdjustableForAccessibilityDe
 
 ## Actions personnalisées
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#customActions-Description" 
            role="tab" 
            aria-selected="true">Description</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#customActions-Example" 
            role="tab" 
            aria-selected="false">Exemple</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link"
            data-toggle="tab" 
            href="#customActions-Links" 
@@ -2385,14 +2551,14 @@ Certaines manipulations basiques peuvent devenir un vrai casse-tête pour se fon
 Un exemple probant est celui du mail iOS natif qui permet d'accéder à un ensemble d'actions.
 
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#CustomActionsVoiceOver"
            role="tab" 
            aria-selected="true">Lecteur d'écran</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#CustomActionsSwitchControl"
@@ -2539,21 +2705,21 @@ class CustomActions: UIViewController {
 
 ## Rotor personnalisé
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#rotor-Details" 
            role="tab" 
            aria-selected="true">Fonctionnement</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#rotor-Example" 
            role="tab" 
            aria-selected="false">Exemple</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link"
            data-toggle="tab" 
            href="#rotor-Link" 
@@ -2696,28 +2862,28 @@ L'implémentation d'une telle fonctionnalité au sein d'une application est donc
 
 ## Options d’accessibilité
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#a11yOptions-States" 
            role="tab" 
            aria-selected="true">États</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#a11yOptions-Events" 
            role="tab" 
            aria-selected="false">Événements</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#a11yOptions-Recap" 
            role="tab" 
            aria-selected="false">Recapitulatif</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link"
            data-toggle="tab" 
            href="#a11yOptions-Link" 
@@ -2826,42 +2992,42 @@ Tous les <a href="https://developer.apple.com/documentation/uikit/accessibility/
 
 ## Barre de navigation
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#navBar-Description" 
            role="tab" 
            aria-selected="true">Description</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#navBar-LeftBarItem" 
            role="tab" 
            aria-selected="false">LeftBarItem</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#navBar-Title" 
            role="tab" 
            aria-selected="false">Titre</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link"
            data-toggle="tab" 
            href="#navBar-RightBarItem" 
            role="tab" 
            aria-selected="false">RightBarItem</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#navBar-ReadingOrder" 
            role="tab" 
            aria-selected="false">Ordre de lecture</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#navBar-Link" 
@@ -3299,35 +3465,35 @@ private func createA11yElts() {
 
 ## Vocalisation synthétisée
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#speechSyn-Description" 
            role="tab" 
            aria-selected="true">Description</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#speechSyn-Details" 
            role="tab" 
            aria-selected="false">Fonctionnement</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link"
            data-toggle="tab" 
            href="#speechSyn-Example" 
            role="tab" 
            aria-selected="false">Exemple</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#speechSyn-Phonemes" 
            role="tab" 
            aria-selected="false">Phonèmes</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#speechSyn-Links" 
@@ -3554,14 +3720,14 @@ Lorsque des mots ont une consonance bien particulière ou que l'on souhaite réa
 
 La génération de cette phonétique peut se faire en passant par les réglages du terminal.
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#Phonemes-iOS13"
            role="tab" 
            aria-selected="true">iOS 13</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#Phonemes-iOS12"
@@ -3635,21 +3801,21 @@ L'ensemble des fonctionnalités proposées par le synthétiseur vocal sont prés
 
 ## Contrôle de sélection
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#switchCtrl-Description" 
            role="tab" 
            aria-selected="true">Description</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#switchCtrl-Custom" 
            role="tab" 
            aria-selected="false">Personnalisation du mode élément</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#switchCtrl-Link" 
@@ -3816,21 +3982,21 @@ Les groupes créés permettent d'accéder directement aux éléments qu'ils cont
 
 ## Vocalisation du nom de l'application
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#appName-Description" 
            role="tab" 
            aria-selected="true">Description</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#appName-Example" 
            role="tab" 
            aria-selected="false">Exemple</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#appName-Link" 

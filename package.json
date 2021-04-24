@@ -22,7 +22,7 @@
   "author": "Orange SA",
   "license": "CC-BY-SA-3.0",
   "devDependencies": {
-    "@11ty/eleventy": "^0.11.0",
+    "@11ty/eleventy": "^0.12.1",
     "@babel/cli": "^7.12.1",
     "@babel/core": "^7.12.3",
     "babel-preset-minify": "^0.5.1",
@@ -38,6 +38,7 @@
     "string": "^3.3.3"
   },
   "dependencies": {
-    "tarteaucitronjs": "^1.4.0"
+    "docsearch.js": "^2.6.3",
+    "tarteaucitronjs": "^1.8.4"
   }
 }

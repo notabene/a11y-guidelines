@@ -116,14 +116,14 @@ L'activation du lecteur d'écran natif change radicalement les résultats obtenu
 Il est donc **très fortement recommandé** de connaître au moins les gestes de base avant d'activer cette fonctionnalité à partir des réglages du terminal.
 
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#VoiceOver-iOS13"
            role="tab" 
            aria-selected="true">iOS 13</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#VoiceOver-iOS12"
@@ -182,14 +182,14 @@ Dans ce cas, les tests réalisés devront donc remonter toute amélioration néc
 Remarque&nbsp;: l'activation de cette fonctionnalité se fait elle aussi via les réglages du terminal.
 
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#SwitchControl-iOS13"
            role="tab" 
            aria-selected="true">iOS 13</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#SwitchControl-iOS12"
@@ -218,7 +218,7 @@ Comme son nom l'indique, cette partie requiert des connaissances plus ou moins p
 <br>
 ### Contraste des couleurs
 
-Graphiquement, [ce point](../conception#couleurs) est très certainement le plus facilement vérifiable grâce à certains logiciels à installer en local par exemple (Colour Contrast Analyzer...).
+Graphiquement, [le contraste des couleurs](../conception#couleurs) est très certainement le plus facilement vérifiable grâce à certains logiciels à installer en local par exemple (Colour Contrast Analyzer...).
 
 L'outil <span lang="en">Accessibility Inspector</span> dispose d'une fonctionnalité [<span lang="en">Color Contrast Calculator</span>](../wwdc/2019/#contraste-des-couleurs-0626) depuis Xcode 11 qui permet aussi de réaliser le même type de vérifications.
 <br><br>

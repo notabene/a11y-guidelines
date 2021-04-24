@@ -3,11 +3,13 @@ module.exports = {
     en: [
       { label: 'Go to menu', href: '#main-menu' },
       { label: 'Go to content', href: '#main-content' },
+      { label: 'Go to search', href: '#search-input', itemClass: ['hidden-if-no-js'] },
       { label: 'Go to footer', href: '#footer' }
     ],
     fr: [
       { label: 'Aller au menu', href: '#main-menu' },
       { label: 'Aller au contenu', href: '#main-content' },
+      { label: 'Aller à la recherche', href: '#search-input', itemClass: ['hidden-if-no-js'] },
       { label: 'Aller au pied de page', href: '#footer' }
     ]
   },
@@ -55,6 +57,7 @@ module.exports = {
           { label: 'Design', href: '/en/mobile/android/design/' },
           { label: 'Develop', href: '/en/mobile/android/development/' },
           { label: 'Test', href: '/en/mobile/android/test/' },
+          { label: 'Evaluate', href: '/en/mobile/android/wcag-audit/' },
           { label: 'Toolbox', href: '/en/mobile/android/toolbox/' }
         ]
       },
@@ -87,7 +90,6 @@ module.exports = {
         },
         theme: 'purple',
         subLevels: [
-          { label: 'Overall guidelines', href: '/en/editorial-content/general/' },
           { label: 'Word', href: '/en/editorial-content/word/' },
           { label: 'Powerpoint', href: '/en/editorial-content/powerpoint/' },
           { label: 'PDF documents', href: '/en/editorial-content/pdf/' },
@@ -141,6 +143,7 @@ module.exports = {
           { label: 'Designer', href: '/fr/mobile/android/conception/' },
           { label: 'Développer', href: '/fr/mobile/android/developpement/' },
           { label: 'Tester', href: '/fr/mobile/android/test/' },
+          { label: 'Évaluer', href: '/fr/mobile/android/audit-wcag/' },
           { label: 'Boite à outils', href: '/fr/mobile/android/outils/' }
         ]
       },
@@ -173,7 +176,6 @@ module.exports = {
         },
         theme: 'purple',
         subLevels: [
-          { label: 'Recommandations transverses', href: '/fr/contenu-editorial/generalites/' },
           { label: 'Word', href: '/fr/contenu-editorial/word/' },
           { label: 'Powerpoint', href: '/fr/contenu-editorial/powerpoint/' },
           { label: 'Documents PDF', href: '/fr/contenu-editorial/pdf/' },
@@ -191,7 +193,8 @@ module.exports = {
     ],
     fr: [
       { label: 'Contact', href: '/fr/contact' },
-      { label: 'À propos', href: '/fr/a-propos' }
+      { label: 'À propos', href: '/fr/a-propos' },
+      { label: 'Accessibilité', href: '/fr/accessibilite' }
     ]
   }
 }

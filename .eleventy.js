@@ -23,6 +23,11 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ 'node_modules/tarteaucitronjs/lang': 'assets/vendors/tarteaucitronjs/lang' })
   eleventyConfig.addPassthroughCopy({ 'node_modules/tarteaucitronjs/!(tarteaucitron.services.js)': 'assets/vendors/tarteaucitronjs' })
 
+  /**
+   * Onboard Algolia's assets instead of using the CDN
+   */
+  eleventyConfig.addPassthroughCopy({ 'node_modules/docsearch.js/dist/cdn/docsearch.min.(css|js)': 'assets/vendors/docsearch' })
+
   // Copy/paste all images and examples contents (they are not processed by 11ty. See the .eleventyignore file)
   eleventyConfig.addPassthroughCopy(`src/**/*.{${IMAGES_EXTENSIONS.join(',')}}`)
   eleventyConfig.addPassthroughCopy(`src/en/web/components-examples/**/*.{html,css,js}`)
@@ -40,25 +45,6 @@ module.exports = function (eleventyConfig) {
       .use(markdownItAnchor, config.eleventy.markdownItAnchor)
       .use(config.eleventy.markdownItCustomParser)
   )
-
-  /**
-   * @see https://stackoverflow.com/questions/6393943/convert-javascript-string-in-dot-notation-into-an-object-reference#answer-6394168
-   */
-  eleventyConfig.addShortcode('translate', function (key, locale) {
-    if (!locales.hasOwnProperty(locale)) {
-      throw new Error(`[translate]: Translation's locale \`${locale}\` does not exist`)
-    }
-
-    key = `${locale}.${key}`
-
-    const translation = key.split('.').reduce((acc, i) => acc[i], locales)
-
-    if (typeof translation === 'undefined') {
-      throw new Error(`[translate]: No translation found for key \`${key}\``)
-    }
-
-    return translation
-  })
 
   eleventyConfig.addShortcode('currentYear', function () {
     return String(new Date().getFullYear())
@@ -82,6 +68,27 @@ module.exports = function (eleventyConfig) {
     return new Intl.DateTimeFormat(locale, options).format(date)
   })
 
+  /**
+   * @see https://stackoverflow.com/questions/6393943/convert-javascript-string-in-dot-notation-into-an-object-reference#answer-6394168
+   */
+  eleventyConfig.addFilter('translate', function (key) {
+    const locale = this.ctx.locale
+
+    if (!locales.hasOwnProperty(locale)) {
+      throw new Error(`[translate]: Translation's locale \`${locale}\` does not exist`)
+    }
+
+    key = `${locale}.${key}`
+
+    const translation = key.split('.').reduce((acc, i) => acc[i], locales)
+
+    if (typeof translation === 'undefined') {
+      throw new Error(`[translate]: No translation found for key \`${key}\``)
+    }
+
+    return translation
+  })
+
   eleventyConfig.addFilter('redirectionPermalink', function (path) {
     // We already have a redirection template for the root page, so we don't want to generate it here
     if (path === 'index.html') {
@@ -94,6 +101,10 @@ module.exports = function (eleventyConfig) {
     }
 
     return `/${path}/`
+  })
+
+  eleventyConfig.addNunjucksFilter('slugify', function (str) {
+    return config.eleventy.markdownItAnchor.slugify(str)
   })
 
   eleventyConfig.addNunjucksFilter('getDefaultLocale', function (locales, outputKey = null) {

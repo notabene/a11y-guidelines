@@ -24,6 +24,9 @@ module.exports = {
     header: {
       logoAlt: 'Orange, go to homepage'
     },
+    search: {
+      label: 'Search'
+    },
     filtersBar: {
       label: 'Filters',
       all: "All"
@@ -32,14 +35,15 @@ module.exports = {
       componentExample: "Component example",
       mobile: 'Mobile',
       technicalArticle: 'Technical article',
-      web: 'Web'
+      web: 'Web',
+      veille: 'Watch'
     },
     toc: {
       title: 'Table of content'
     },
     lastPosts: {
       title: 'Last posts',
-      seeAll: 'See all'
+      seeAll: 'See all posts'
     },
     headingsAnchor: {
       label: 'Anchor link'
@@ -78,6 +82,9 @@ module.exports = {
     header: {
       logoAlt: "Orange, aller à l’accueil"
     },
+    search: {
+      label: 'Rechercher'
+    },
     filtersBar: {
       label: 'Filtres',
       all: 'Tout'
@@ -86,14 +93,15 @@ module.exports = {
       componentExample: "Exemple de composant",
       mobile: 'Mobile',
       technicalArticle: 'Article technique',
-      web: 'Web'
+      web: 'Web',
+      veille: 'Veille'
     },
     toc: {
       title: 'Sommaire'
     },
     lastPosts: {
       title: 'Derniers articles',
-      seeAll: 'Voir tout'
+      seeAll: 'Voir tous les articles'
     },
     headingsAnchor: {
       label: 'Lien pour ancrage'

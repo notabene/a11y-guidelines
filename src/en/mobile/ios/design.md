@@ -7,24 +7,26 @@ displayToc: true
 
 This guide aims to present the different accessibility criteria for getting an accessible iOS application.
 <br>Each criterion explains for whom it is important, when it can be implemented, why it is important and the corresponding accessibility rule.
-<br><br>
+
+<a href="https://developer.apple.com/videos/play/wwdc2020/10020/?time=555"><img class="img-fluid" alt="Access to the WWDC video highlighting the importance ofthe visual." src="../../images/conception-intro-wwdc.png"/>
+</a>
 ## Images
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#images-Objectives" 
            role="tab" 
            aria-selected="true">Objective</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#images-Description" 
            role="tab" 
            aria-selected="false">Description</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#images-Check" 
@@ -62,28 +64,28 @@ Images are often used to convey a lot of information that must be exposed thanks
 
 ## Colours
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#colours-Objectives" 
            role="tab" 
            aria-selected="true">Objective</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#colours-Description" 
            role="tab" 
            aria-selected="false">Description</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#colours-Examples" 
            role="tab" 
            aria-selected="false">Examples</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#colours-Check" 
@@ -139,34 +141,36 @@ The label “film | 8:40 PM…” does not have enough contrast and will not be 
 - The contrast between the colour of the background and the text must be appropriate (can be measured with the Colour Contrast Analyser tool or with the [Color&nbsp;Contrast&nbsp;Calculator](../wwdc/2019/#color-contrast-0626) feature of Accessibility Inspector since Xcode 11).
 
 - With the **Dark Mode** since iOS 13, special attention must be paid to the contrasts used in the different themes and that can be modified with the <a style="text-decoration: underline" role="button" onclick="$('#a11yOptions-Description_tab').trigger('click');document.getElementById('a11yOptions-Description').scrollIntoView({ behavior: 'smooth', block: 'start' })">Increase&nbsp;Contrast</a> accessibility option.
+
+- The <a href="../wwdc/2020/020/" style="text-decoration: underline;">detailed summary</a> of the WWDC 2020 video entitled **Make Your App Visually Accessible** is a perfect start to follow the appropriate instructions (especially the section 'COLOR & SHAPES' - 'Contrast').
 </div>
 </div>
 <br><br>
 
 ## Alternative text
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#alternativeText-Objectives" 
            role="tab" 
            aria-selected="true">Objective</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#alternativeText-Description" 
            role="tab" 
            aria-selected="false">Description</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#alternativeText-Examples" 
            role="tab" 
            aria-selected="false">Example</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#alternativeText-Check" 
@@ -213,28 +217,28 @@ It is obvious that we must add text alternatives.
 
 ## Title and header
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#titleAndHeaders-Objectives" 
            role="tab" 
            aria-selected="true">Objective</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#titleAndHeaders-Description" 
            role="tab" 
            aria-selected="false">Description</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#titleAndHeaders-Examples" 
            role="tab" 
            aria-selected="false">Example</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#titleAndHeaders-Check" 
@@ -276,21 +280,21 @@ It makes navigation easier for everyone: at any time, we know where we are in th
 
 ## Element states
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#eltStates-Objectives" 
            role="tab" 
            aria-selected="true">Objective</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#eltStates-Description" 
            role="tab" 
            aria-selected="false">Description</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#eltStates-Examples" 
@@ -329,14 +333,14 @@ Any item whose status changes when using the application must vocalize its statu
 
 ## Standard components
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#stdComponent-Objectives" 
            role="tab" 
            aria-selected="true">Objective</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#stdComponent-Description" 
@@ -365,28 +369,28 @@ If no standard component corresponds to the need, create a dedicated component b
 
 ## Touch target
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#touchTarget-Objectives" 
            role="tab" 
            aria-selected="true">Objective</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#touchTarget-Description" 
            role="tab" 
            aria-selected="false">Description</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#touchTarget-Examples" 
            role="tab" 
            aria-selected="false">Examples</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#touchTarget-Check" 
@@ -426,28 +430,28 @@ In the examples below, the black box corresponds to the size of the interactive 
 
 ## Ghost element
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#ghostElt-Objectives" 
            role="tab" 
            aria-selected="true">Objective</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#ghostElt-Description" 
            role="tab" 
            aria-selected="false">Description</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#ghostElt-Examples" 
            role="tab" 
            aria-selected="false">Example</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#ghostElt-Check" 
@@ -489,21 +493,21 @@ With the screen reader, no invisible element must be read or take focus when rea
 
 ## Content Control
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#contentControl-Objectives" 
            role="tab" 
            aria-selected="true">Objective</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#contentControl-Description" 
            role="tab" 
            aria-selected="false">Description</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#contentControl-Check" 
@@ -534,21 +538,21 @@ All interactive content must be controlled by the user (adding an accessible but
 
 ## Changing content
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#changingContent-Objectives" 
            role="tab" 
            aria-selected="true">Objective</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#changingContent-Description" 
            role="tab" 
            aria-selected="false">Description</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#changingContent-Check" 
@@ -590,28 +594,28 @@ Make sure that dynamic changes are vocalized.
 
 ## Horizontal scroll
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#horizontalScroll-Objectives" 
            role="tab" 
            aria-selected="true">Objective</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#horizontalScroll-Description" 
            role="tab" 
            aria-selected="false">Description</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#horizontalScroll-Examples" 
            role="tab" 
            aria-selected="false">Examples</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#horizontalScroll-Check" 
@@ -661,21 +665,21 @@ When necessary, also add “next” and “previous” buttons.
 
 ## Form
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#form-Objectives" 
            role="tab" 
            aria-selected="true">Objective</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#form-Description" 
            role="tab" 
            aria-selected="false">Description</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#form-Check" 
@@ -704,28 +708,28 @@ Form fields must vocalize their labels.
 
 ## Reading order
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#readingOrder-Objectives" 
            role="tab" 
            aria-selected="true">Objective</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#readingOrder-Description" 
            role="tab" 
            aria-selected="false">Description</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#readingOrder-Examples" 
            role="tab" 
            aria-selected="false">Example</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#readingOrder-Check" 
@@ -770,21 +774,21 @@ Traversal order (VoiceOver) is logical and coherent.
 
 ## Language
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#language-Objectives" 
            role="tab" 
            aria-selected="true">Objective</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#language-Description" 
            role="tab" 
            aria-selected="false">Description</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#language-Check" 
@@ -818,21 +822,21 @@ The words and the text in a different language than the rest of the application 
 
 ## Screen orientation
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#screenOrientation-Objectives" 
            role="tab" 
            aria-selected="true">Objective</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#screenOrientation-Description" 
            role="tab" 
            aria-selected="false">Description</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#screenOrientation-Check" 
@@ -875,7 +879,7 @@ It's highly recommended to :
 
 ## Accessibility dedicated screen
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active" 
            data-toggle="tab" 
            href="#DedicatedScreen-Description" 
@@ -901,14 +905,14 @@ However, even if it could be a brilliant idea at first sight, it's definitely **
 ## Accessibility options
 <a id="a11yOptions"></a>
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#a11yOptions-Objectives" 
            role="tab" 
            aria-selected="true">Objective</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#a11yOptions-Description"
@@ -916,7 +920,7 @@ However, even if it could be a brilliant idea at first sight, it's definitely **
            role="tab" 
            aria-selected="false">Description</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#a11yOptions-Check" 
@@ -935,6 +939,9 @@ It's then primordial :
 - To **understand perfectly** each one of these options that can have an impact during the conception or the implementation periods of an application.
 
 - To **test** each appropriate option so as to be sure that its purpose is completely taken into account inside the application.
+
+<a href="https://developer.apple.com/videos/play/wwdc2020/10020/?time=783"><img class="img-fluid" alt="Access to the WWDC video that highlights the importance of taking into account the user settings inside an application." src="../../images/displayPreferences-wwdc.png"/>
+</a>
 
 </br>**Target:** everyone.  
 **When:** as of design and during development.
@@ -961,39 +968,41 @@ The full list of these options including their purpose and their coding name is 
 
 9. [Reduce Motion](#optionA11Y_limiteVisuel)
 
-10. [Reduce Transparency](#optionA11Y_reductionTransparence)
+10. [Prefer Cross-Fade Transition](#optionA11Y_preferCrossFadeTransition)
 
-11. [Shake to Undo](#optionA11Y_secouerPourAnnuler)
+11. [Reduce Transparency](#optionA11Y_reductionTransparence)
 
-12. [Speak Screen](#optionA11Y_lecturePage)
+12. [Shake to Undo](#optionA11Y_secouerPourAnnuler)
 
-13. [Speak Selection](#optionA11Y_speakSelection)
+13. [Speak Screen](#optionA11Y_lecturePage)
 
-14. [Switch Control](#optionA11Y_switchControl)
+14. [Speak Selection](#optionA11Y_speakSelection)
 
-15. [VoiceOver](#optionA11Y_voiceOver)
+15. [Switch Control](#optionA11Y_switchControl)
 
-16. [Auto-Play Video Previews](#optionA11Y_autoPlayVideoPreviews)
+16. [VoiceOver](#optionA11Y_voiceOver)
 
-17. [Differentiate Without Colour](#optionA11Y_differentiateWithoutColour)
+17. [Auto-Play Video Previews](#optionA11Y_autoPlayVideoPreviews)
 
-18. [On/Off Labels](#optionA11Y_onOffSwitchLabels)
+18. [Differentiate Without Colour](#optionA11Y_differentiateWithoutColour)
+
+19. [On/Off Labels](#optionA11Y_onOffSwitchLabels)
 
 <br>
 
 <a name="optionA11Y_contraste"></a>
 
-- **Increase Contrast** (UIAccessibilityDarkerSystemColorsEnabled): see the [WWDC&nbsp;2018&nbsp;video](../wwdc/2018/230#Contrast) for a detailed description.
+- **Increase Contrast** (UIAccessibilityDarkerSystemColorsEnabled): see the [WWDC&nbsp;2018&nbsp;video](../wwdc/2018/230/#contrast-0438) for a detailed description.
 
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#Contrast-iOS13"
            role="tab" 
            aria-selected="true">iOS 13</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#Contrast-iOS12"
@@ -1018,14 +1027,14 @@ The full list of these options including their purpose and their coding name is 
 - **AssistiveTouch** (UIAccessibilityIsAssistiveTouchRunning): displays the homonymous menu in foreground, whatever the runnning application.
 
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#AssistiveTouch-iOS13"
            role="tab" 
            aria-selected="true">iOS 13</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#AssistiveTouch-iOS12"
@@ -1046,17 +1055,17 @@ The full list of these options including their purpose and their coding name is 
 
 <a name="optionA11Y_bold"></a>
 
-- **Bold Text** (UIAccessibilityIsBoldTextEnabled): see the [WWDC&nbsp;2018&nbsp;video](../wwdc/2018/230#Sizing) for a detailed description.
+- **Bold Text** (UIAccessibilityIsBoldTextEnabled): see the [WWDC&nbsp;2018&nbsp;video](../wwdc/2018/230/#sizing-0704) for a detailed description.
 
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#Bold-iOS13"
            role="tab" 
            aria-selected="true">iOS 13</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#Bold-iOS12"
@@ -1079,14 +1088,14 @@ The full list of these options including their purpose and their coding name is 
 - **Subtitles & Captioning** (UIAccessibilityIsClosedCaptioningEnabled): displays closed captioning or subtitles when available in the `appTV` or `Videos` app.
 
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#ClosedCaption-iOS13"
            role="tab" 
            aria-selected="true">iOS 13</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#ClosedCaption-iOS12"
@@ -1109,14 +1118,14 @@ The full list of these options including their purpose and their coding name is 
 - **Grayscale** (UIAccessibilityIsGrayscaleEnabled): makes the display more readable for color blind people.
 
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#GrayScale-iOS13"
            role="tab" 
            aria-selected="true">iOS 13</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#GrayScale-iOS12"
@@ -1139,14 +1148,14 @@ The full list of these options including their purpose and their coding name is 
 - **Guided Access** (UIAccessibilityIsGuidedAccessEnabled): restricts use of a single application.
 
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#GuidedAccess-iOS13"
            role="tab" 
            aria-selected="true">iOS 13</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#GuidedAccess-iOS12"
@@ -1166,17 +1175,17 @@ The full list of these options including their purpose and their coding name is 
 </div></div></br>
 
 <a name="optionA11Y_inverserLesCouleurs"></a>
-- **Invert Colours** (UIAccessibilityIsInvertColorsEnabled): reduces glare and eye strain thanks to a very helpful mode for visual impaired people.
+- **Invert Colours** (UIAccessibilityIsInvertColorsEnabled): reduces glare and eye strain thanks to a very helpful mode for visual impaired people ⟹ this option may be deactivated within an app thanks to the property <a href="../wwdc/2020/020/#color-shapes" style="text-decoration: underline;">`accessibilityIgnoresInvertColors`</a>.
 
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#invertColors-iOS13"
            role="tab" 
            aria-selected="true">iOS 13</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#invertColors-iOS12"
@@ -1199,14 +1208,14 @@ The full list of these options including their purpose and their coding name is 
 - **Mono Audio** (UIAccessibilityIsMonoAudioEnabled): allows a complete hearing understanding with headset on without missing a word or a sound for people who are hard of hearing or deaf in one ear.
 
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#AudioMono-iOS13"
            role="tab" 
            aria-selected="true">iOS 13</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#AudioMono-iOS12"
@@ -1226,17 +1235,17 @@ The full list of these options including their purpose and their coding name is 
 </div></div></br>
 
 <a name="optionA11Y_limiteVisuel"></a>
-- **Reduce Motion** (UIAccessibilityIsReduceMotionEnabled): see the [WWDC&nbsp;2018&nbsp;video](../wwdc/2018/230#Motion) for a detailed description.
+- **Reduce Motion** (UIAccessibilityIsReduceMotionEnabled): see the [WWDC&nbsp;2018&nbsp;video](../wwdc/2018/230/#motion-0848), the [WWDC&nbsp;2019](../wwdc/2019/#reduce-motion) and the  [WWDC&nbsp;2020](../wwdc/2020/020/#display-preferences) videos for a detailed description.
 
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#ReduceMotion-iOS13"
            role="tab" 
            aria-selected="true">iOS 13</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#ReduceMotion-iOS12"
@@ -1255,18 +1264,24 @@ The full list of these options including their purpose and their coding name is 
 ![Access illustration via Settings - General - Accessibility - Reduce Motion](../../images/optionA11Y_iOS12_reduceMotion.png)
 </div></div></br>
 
+<a name="optionA11Y_preferCrossFadeTransition"></a>
+- **Prefer Cross-Fade Transition** (UIAccessibilityPrefersCrossFadeTranstions): see the [WWDC&nbsp;2019](../wwdc/2019/#reduce-motion) and the  [WWDC&nbsp;2020](../wwdc/2020/020/#display-preferences) videos for a detailed description.
+    
+![Access illustration via Settings - Accessibility - Motion - Reduce Motion - Prefer Cross-Fade Transition](../../images/optionA11Y_iOS13_crossFadeTransition.png)
+</br>
+
 <a name="optionA11Y_reductionTransparence"></a>
-- **Reduce Transparency** (UIAccessibilityIsReduceTransparencyEnabled): see the [WWDC&nbsp;2018&nbsp;video](../wwdc/2018/230#TransparencyAndBlurring) for a detailed description.
+- **Reduce Transparency** (UIAccessibilityIsReduceTransparencyEnabled): see the [WWDC&nbsp;2018&nbsp;video](../wwdc/2018/230/#transparency-and-blurring-0307) for a detailed description.
 
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#ReduceTransparency-iOS13"
            role="tab" 
            aria-selected="true">iOS 13</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#ReduceTransparency-iOS12"
@@ -1289,14 +1304,14 @@ The full list of these options including their purpose and their coding name is 
 - **Shake to Undo** (UIAccessibilityIsShakeToUndoEnabled): displays a menu to undo an action, preventing from holding backspace and watching all the letters disappear one by one for instance.
 
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#ShakeToUndo-iOS13"
            role="tab" 
            aria-selected="true">iOS 13</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#ShakeToUndo-iOS12"
@@ -1319,14 +1334,14 @@ The full list of these options including their purpose and their coding name is 
 - **Speak Screen** (UIAccessibilityIsSpeakScreenEnabled): launches the vocalization of the screen content.
 
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#SpeakScreen-iOS13"
            role="tab" 
            aria-selected="true">iOS 13</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#SpeakScreen-iOS12"
@@ -1349,14 +1364,14 @@ The full list of these options including their purpose and their coding name is 
 - **Speak Selection** (UIAccessibilityIsSpeakSelectionEnabled): displays a menu that suggests to speak the selection that fired it.
 
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#SpeakSelection-iOS13"
            role="tab" 
            aria-selected="true">iOS 13</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#SpeakSelection-iOS12"
@@ -1379,14 +1394,14 @@ The full list of these options including their purpose and their coding name is 
 - **Switch Control** (UIAccessibilityIsSwitchControlRunning): activates the feature in `point`&nbsp;`scanning`&nbsp;`mode` or in `item`&nbsp;`scanning`&nbsp;`mode`.
 
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#SwitchControl-iOS13"
            role="tab" 
            aria-selected="true">iOS 13</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#SwitchControl-iOS12"
@@ -1409,14 +1424,14 @@ The full list of these options including their purpose and their coding name is 
 - **VoiceOver** (UIAccessibilityIsVoiceOverRunning): launches the screen reader.
 
 <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active"
            data-toggle="tab" 
            href="#VoiceOver-iOS13"
            role="tab" 
            aria-selected="true">iOS 13</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" 
            data-toggle="tab" 
            href="#VoiceOver-iOS12"
@@ -1436,13 +1451,13 @@ The full list of these options including their purpose and their coding name is 
 </div></div></br>
 
 <a name="optionA11Y_autoPlayVideoPreviews"></a>
-- **Auto-Play Video Previews** (UIAccessibilityIsVideoAutoplayEnabled): see the [WWDC&nbsp;2019&nbsp;video](../wwdc/2019/#VisualDesignAccessibility) for a detailed description of this **iOS 13 new feature**.
+- **Auto-Play Video Previews** (UIAccessibilityIsVideoAutoplayEnabled): see the [WWDC&nbsp;2019&nbsp;video](../wwdc/2019/#reduce-motion) for a detailed description of this **iOS 13 new feature**.
 
 ![Access illustration via Settings - Accessibility - Motion - Auto-play Video Previews](../../images/optionA11Y_iOS13_autoPlayVideoPreviews.png)
 </br>
 
 <a name="optionA11Y_differentiateWithoutColour"></a>
-- **Differentiate Without Colour** (UIAccessibilityShouldDifferentiateWithoutColour): see the [WWDC&nbsp;2019&nbsp;video](../wwdc/2019/#VisualDesignAccessibility) for a detailed description of this **iOS 13 new feature**.
+- **Differentiate Without Colour** (UIAccessibilityShouldDifferentiateWithoutColour): see the [WWDC&nbsp;2019&nbsp;video](../wwdc/2019/#color) for a detailed description of this **iOS&nbsp;13 new feature** and the [WWDC&nbsp;2020&nbsp;video](../wwdc/2020/020/#color-shapes) for its **programmatic access from iOS&nbsp;14**.
 
 ![Access illustration via Settings - Accessibility - Display & Text Size - Differentiate Without Colour](../../images/optionA11Y_iOS13_differentiateWithoutColour.png)
 </br>

@@ -112,6 +112,12 @@ blockquote p::after {
   transition: opacity .25s ease;
 }
 
+#back-to-top:hover,
+#back-to-top:focus {
+  color: inherit;
+  text-decoration: underline;
+}
+
 
 
 /*
@@ -134,6 +140,10 @@ blockquote p::after {
 /**
  * Footer
  */
+
+[role="contentinfo"] a:not([aria-current]) {
+  text-decoration: underline;
+}
 
 [role="contentinfo"] svg {
   fill: #fff;
@@ -163,6 +173,72 @@ pre code .important {
 pre code {
   border: .2rem solid #eee;
   display: block;
+}
+
+
+
+/**
+ * Search field
+ */
+
+.form-control.bg-dark::placeholder {
+  color: #eee;
+}
+
+#search-input-toggler {
+  outline-color: #ff7900;
+}
+
+.algolia-autocomplete {
+  display: block !important;
+}
+
+/* Adapt to small screens */
+.algolia-autocomplete .ds-dropdown-menu {
+  min-width: 300px;
+  width: 100%;
+}
+
+/* Place the search dropdown to the left */
+.algolia-autocomplete.algolia-autocomplete-right .ds-dropdown-menu {
+  right: unset !important;
+}
+
+.algolia-autocomplete.algolia-autocomplete-right .ds-dropdown-menu::before {
+  left: 3rem;
+  right: unset;
+}
+
+/* Customize colors and appearance */
+.algolia-autocomplete .algolia-docsearch-suggestion {
+  text-decoration: none;
+}
+
+.algolia-autocomplete .algolia-docsearch-suggestion--category-header {
+  font-weight: 700;
+}
+
+.algolia-autocomplete .algolia-docsearch-suggestion--subcategory-column {
+  color: #666;
+}
+
+.algolia-autocomplete .algolia-docsearch-suggestion--highlight {
+  background-color: #ff7900;
+  color: #000;
+}
+
+.algolia-autocomplete .algolia-docsearch-suggestion--highlight {
+  box-shadow: inset 0 -2px 0 0 #ff7900 !important;
+}
+
+/* Make sure we have an outline when we navigate through the results with the keyboard */
+.algolia-autocomplete .ds-suggestion.ds-cursor .algolia-docsearch-suggestion {
+  outline: .125rem solid #ff7900;
+  outline-offset: -.125rem;
+}
+
+.algolia-autocomplete .ds-suggestion.ds-cursor .algolia-docsearch-suggestion--content {
+  background-color: #f6f6f6 !important;
 }
 
 
